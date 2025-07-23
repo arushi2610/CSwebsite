@@ -1,0 +1,230 @@
+.community-hero {
+  height: 50vh;
+  min-height: 400px;
+  background-image: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.community-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(37, 37, 37, 0.8), rgba(30, 30, 30, 0.95));
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 1rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+/* Network Partners Styles */
+.network-partners {
+  background-color: var(--bg-base);
+}
+
+.network-partners h2 {
+  color: var(--text-primary);
+}
+
+.network-partners .text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+.partner-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary);
+}
+
+.partner-logo {
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.partner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.partner-card:hover .partner-logo img {
+  transform: scale(1.05);
+}
+
+.partner-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.partner-content h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.partner-link {
+  color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  text-decoration: none;
+}
+
+.partner-link:hover {
+  color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Social Media Styles */
+.social-media {
+  background-color: var(--bg-base);
+}
+
+.social-media h2 {
+  color: var(--text-primary);
+}
+
+.social-media .text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+.social-media-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-media-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary);
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.social-content {
+  flex-grow: 1;
+}
+
+.social-content h3 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.social-handle {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.social-description {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.social-arrow {
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.social-media-card:hover .social-arrow {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-media-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .social-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .social-media-card:hover .social-arrow {
+    transform: rotate(90deg) translateX(5px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .social-media .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .social-media .grid {
+    grid-template-columns: 1fr;
+  }
+}
