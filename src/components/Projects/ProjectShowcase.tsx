@@ -9,7 +9,7 @@ interface Project {
   //imageUrl: string;
   repoUrl: string;
   //demoUrl: string;
-  //technologies: string[];
+  technologies: string[];
   /*author: {
     name: string;
     avatarUrl: string;
@@ -27,7 +27,7 @@ const ProjectShowcase: React.FC = () => {
       //imageUrl: "https://images.pexels.com/photos/7439141/pexels-photo-7439141.jpeg?auto=compress&cs=tinysrgb&w=1600",
       repoUrl: "https://github.com/Code-Social/fitfinder",
       //demoUrl: "https://example.com",
-      //technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
+      technologies: ["React", "Node.js", "MongoDB"],
       /*author: {
         name: "Emma Wilson",
         avatarUrl: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1600"
@@ -41,7 +41,7 @@ const ProjectShowcase: React.FC = () => {
       //imageUrl: "https://images.pexels.com/photos/6633920/pexels-photo-6633920.jpeg?auto=compress&cs=tinysrgb&w=1600",
       repoUrl: "https://github.com/Code-Social/canitrythis",
       //demoUrl: "https://example.com",
-      //technologies: ["Vue.js", "Firebase", "Three.js", "TypeScript"],
+      technologies: ["Vue.js", "Firebase", "React", "TypeScript"],
       /*author: {
         name: "James Chen",
         avatarUrl: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1600"
