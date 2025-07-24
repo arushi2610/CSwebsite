@@ -1,0 +1,164 @@
+.get-involved-hero {
+  height: 50vh;
+  min-height: 400px;
+  background-image: url('https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.get-involved-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(37, 37, 37, 0.8), rgba(30, 30, 30, 0.95));
+}
+
+.join-card {
+  padding: 2.5rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.join-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary);
+}
+
+.join-card .icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.join-card h2 {
+  color: var(--text-primary);
+}
+
+.join-card p {
+  color: var(--text-secondary);
+}
+
+.social-card {
+  padding: 2rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary);
+}
+
+.social-card h3 {
+  color: var(--text-primary);
+}
+
+.social-card p {
+  color: var(--text-secondary);
+}
+
+.social-card .icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.social-card .icon-container.twitter {
+  color: #1DA1F2;
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.social-card .icon-container.linkedin {
+  color: #0A66C2;
+  background-color: rgba(10, 102, 194, 0.1);
+}
+
+.social-card .icon-container.github {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-card .icon-container.instagram {
+  color: #E4405F;
+  background-color: rgba(228, 64, 95, 0.1);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer.active {
+  max-height: 1000px;
+  padding-bottom: 1.5rem;
+}
+
+.faq-answer p {
+  color: var(--text-secondary);
+}
+
+.faq-section h2 {
+  color: var(--text-primary);
+}
+
+.faq-section p {
+  color: var(--text-secondary);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
