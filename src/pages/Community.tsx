@@ -140,7 +140,7 @@ import { FaXTwitter } from 'react-icons/fa6';
           </div>
         </div>
       </section>
-*/}
+*/
       <section className="social-media py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -149,7 +149,7 @@ import { FaXTwitter } from 'react-icons/fa6';
               Want to stay in the loop? Follow us on social media for all the latest news, exciting events, and community updates!
             </p>
           </div>
-          
+      
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {socialMediaHandles.map((social, index) => (
               <a 
