@@ -4,7 +4,7 @@ import './Community.css';
 import { FaDiscord } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
-const Community: React.FC = () => {
+/*const Community: React.FC = () => {
   const networkPartners = [
     {
       name: "TechHub Global",
@@ -22,6 +22,7 @@ const Community: React.FC = () => {
       website: "https://womenintech.org"
     }
   ];
+  */
 
   const socialMediaHandles = [
     {
