@@ -1,28 +1,36 @@
 import React from 'react';
-import { Users, MessageCircle, Share2, ExternalLink, Twitter, Linkedin, Github, Instagram } from 'lucide-react';
+import {
+  Users,
+  MessageCircle,
+  Share2,
+  ExternalLink,
+  Linkedin,
+  Github,
+  Instagram
+} from 'lucide-react';
 import './Community.css';
 import { FaDiscord } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
-/*const Community: React.FC = () => {
-  const networkPartners = [
-    {
-      name: "TechHub Global",
-      logo: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400",
-      website: "https://techhub.com"
-    },
-    {
-      name: "DevConnect Alliance",
-      logo: "https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=400",
-      website: "https://devconnect.org"
-    },
-    {
-      name: "Women in Tech Network",
-      logo: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
-      website: "https://womenintech.org"
-    }
-  ];
-  */
+const Community = () => {
+  // Uncomment and use if needed later
+  // const networkPartners = [
+  //   {
+  //     name: "TechHub Global",
+  //     logo: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     website: "https://techhub.com"
+  //   },
+  //   {
+  //     name: "DevConnect Alliance",
+  //     logo: "https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     website: "https://devconnect.org"
+  //   },
+  //   {
+  //     name: "Women in Tech Network",
+  //     logo: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
+  //     website: "https://womenintech.org"
+  //   }
+  // ];
 
   const socialMediaHandles = [
     {
@@ -64,6 +72,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 
   return (
     <div className="community-page">
+      {/* Hero Section */}
       <section className="community-hero">
         <div className="overlay"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -73,11 +82,21 @@ import { FaXTwitter } from 'react-icons/fa6';
               Ready to dive in? Connect with fellow learners, join our mentorship programs, and grow together. It's a supportive space, all about learning and exceling in your career!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://discord.gg/MSTNyRSPYW" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center justify-center gap-2">
+              <a
+                href="https://discord.gg/MSTNyRSPYW"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary flex items-center justify-center gap-2"
+              >
                 <FaDiscord size={20} />
                 Join Discord
               </a>
-              <a href="https://www.linkedin.com/company/code-social/" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center justify-center gap-2">
+              <a
+                href="https://www.linkedin.com/company/code-social/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary flex items-center justify-center gap-2"
+              >
                 <Share2 size={20} />
                 Follow Us
               </a>
@@ -86,6 +105,7 @@ import { FaXTwitter } from 'react-icons/fa6';
         </div>
       </section>
 
+      {/* Stats Section */}
       <section className="stats-section py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -107,6 +127,8 @@ import { FaXTwitter } from 'react-icons/fa6';
           </div>
         </div>
       </section>
+
+      {/* Uncomment this block if you want to display network partners */}
       {/*
       <section className="network-partners py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -140,7 +162,9 @@ import { FaXTwitter } from 'react-icons/fa6';
           </div>
         </div>
       </section>
-*/
+      */}
+
+      {/* Social Media Section */}
       <section className="social-media py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -149,13 +173,13 @@ import { FaXTwitter } from 'react-icons/fa6';
               Want to stay in the loop? Follow us on social media for all the latest news, exciting events, and community updates!
             </p>
           </div>
-      
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {socialMediaHandles.map((social, index) => (
-              <a 
+              <a
                 key={index}
-                href={social.url} 
-                target="_blank" 
+                href={social.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-media-card"
               >
