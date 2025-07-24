@@ -107,7 +107,7 @@ import { FaXTwitter } from 'react-icons/fa6';
           </div>
         </div>
       </section>
-/*
+      {/*
       <section className="network-partners py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -140,7 +140,7 @@ import { FaXTwitter } from 'react-icons/fa6';
           </div>
         </div>
       </section>
-*/
+*/}
       <section className="social-media py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
