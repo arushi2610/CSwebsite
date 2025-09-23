@@ -39,7 +39,7 @@ const About: React.FC = () => {
 
   const metrics = [
     { 
-      value: '8,000+', 
+      value: '10,000+', 
       label: 'Community Members',
       description: 'Students to senior devs, coming together to share their passion.'
     },
@@ -213,7 +213,7 @@ const About: React.FC = () => {
           <p className="max-w-4xl mx-auto text-center text-WHITE text-lg leading-relaxed">
             Hi, I’m Arushi, Founder of Code Social 👋<br /><br />
 I wasn’t coding since I was 12. I actually started learning when I was in college, but I knew I wanted to learn. When I joined random WhatsApp groups to ask questions, I was often judged for being “too behind.” I saw others get shut down too, especially beginners just getting started.<br /><br />
-So in 2023, I created a WhatsApp group to share beginner-friendly resources, free of judgment. That small space grew into Code Social, a global community of 8,000+ learners and a team of 11 organizing workshops, meetups, and challenges to make tech more accessible and fun.
+So in 2023, I created a WhatsApp group to share beginner-friendly resources, free of judgment. That small space grew into Code Social, a global community of 10,000+ learners and a team of 11 organizing workshops, meetups, and challenges to make tech more accessible and fun.
 I started this while pursuing my bachelor’s, and now I’m continuing the journey with a Master’s in Computer Science in Chicago. I bring back everything I learn to help others grow.
 What’s next? More events. Bigger challenges. New tools. And maybe your next breakthrough.
 Stay tuned, stay curious, and let’s build something amazing together.

@@ -182,7 +182,7 @@ const Events: React.FC = () => {
           <div className="luma-embed mb-16">
             <div className="luma-container">
               <iframe
-                src="https://lu.ma/embed/event/evt-G2VCJ7LbZEK71fS/simple"
+                src="https://luma.com/embed/event/evt-PGT2xCESf1eKh0V/simple"
                 width="600"
                 height="450"
                 frameBorder="0"

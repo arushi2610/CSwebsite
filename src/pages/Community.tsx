@@ -111,7 +111,7 @@ const Community = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="stat-card">
               <Users className="text-primary" size={40} />
-              <div className="stat-value">8,000+</div>
+              <div className="stat-value">10,000+</div>
               <div className="stat-label">Active Learners</div>
             </div>
             <div className="stat-card">
