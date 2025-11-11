@@ -84,7 +84,7 @@ const About: React.FC = () => {
     },
     {
       name: 'Sk Md Rizwan',
-      role: 'Executive Team Member',
+      role: 'Technical Lead',
       bio: 'I make memes, code, and sometimes both at the same time.',
       imageUrl: '/riz.png',
       linkedinUrl: 'https://www.linkedin.com/in/skmdrizwan/'
@@ -130,13 +130,6 @@ const About: React.FC = () => {
       bio: 'Little bit of Creativity, Little bit of Chaos.',
       imageUrl: '/roshni.png',
       linkedinUrl: 'https://www.linkedin.com/in/roshni-rajani/'
-    },
-    {
-      name: 'Isha Vijay Mahajan',
-      role: 'Graphic Designer',
-      bio: 'I put shapes on screens.',
-      imageUrl: '/isha.png',
-      linkedinUrl: 'https://www.linkedin.com/in/isha-mahajan-22ab59259/'
     }
   ];
 
