@@ -182,11 +182,11 @@ const Events: React.FC = () => {
           <div className="luma-embed mb-16">
             <div className="luma-container">
               <iframe
-                src="https://luma.com/embed/event/evt-PGT2xCESf1eKh0V/simple"
+                src="https://luma.com/embed/event/evt-b2mPKd7J5YDLFyx/simple"
                 width="600"
                 height="450"
-                frameBorder="0"
-                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+                frameBorder={0}
+                style={{ border: '1px solid #bfcbda88', borderRadius: 4 }}
                 allow="fullscreen; payment"
                 aria-hidden="false"
                 tabIndex={0}
@@ -352,7 +352,7 @@ const Events: React.FC = () => {
                 Whether you're an industry expert wanting to share knowledge, a company looking to engage with developers, or a community member with a great idea, we'd love to collaborate with you.
               </p>
               <a 
-                href="./GetInvolved.tsx"
+                href="/GetInvolved"
                 className="btn-white inline-flex items-center gap-2"
               >
                 <span>Partner with Code Social</span>

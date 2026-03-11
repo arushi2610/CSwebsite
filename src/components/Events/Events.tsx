@@ -40,7 +40,7 @@ const Events: React.FC = () => {
           <h2 className="font-inter font-bold text-3xl md:text-4xl text-center mb-12">Our Event Calendar</h2>
           <div className="luma-container">
             <iframe
-              src="https://luma.com/embed/event/evt-PGT2xCESf1eKh0V/simple"
+              src="https://luma.com/embed/event/evt-b2mPKd7J5YDLFyx/simple"
               width="600"
               height="450"
               frameBorder="0"

@@ -76,15 +76,8 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/protonicgod/'
     },
     {
-      name: 'Ajinkya Balwant Soley',
-      role: 'Core Team Member',
-      bio: 'Chasing dreams at 1km/hr',
-      imageUrl: '/ajinkya.png',
-      linkedinUrl: 'https://www.linkedin.com/in/ajinkya-soley/'
-    },
-    {
       name: 'Sk Md Rizwan',
-      role: 'Executive Team Member',
+      role: 'Technical Lead',
       bio: 'I make memes, code, and sometimes both at the same time.',
       imageUrl: '/riz.png',
       linkedinUrl: 'https://www.linkedin.com/in/skmdrizwan/'
@@ -102,13 +95,6 @@ const About: React.FC = () => {
       bio: 'I push your notification bell.',
       imageUrl: '/divya.png',
       linkedinUrl: 'https://www.linkedin.com/in/divya-shirsath-008702216/'
-    },
-    {
-      name: 'Ashish Salve',
-      role: 'Community Manager',
-      bio: 'I train hard, nap harder, and get lost in between.',
-      imageUrl: '/ashish.png',
-      linkedinUrl: 'https://www.linkedin.com/in/ashishsalve/'
     },
     {
       name: 'Namish Sahu',
@@ -131,13 +117,6 @@ const About: React.FC = () => {
       imageUrl: '/roshni.png',
       linkedinUrl: 'https://www.linkedin.com/in/roshni-rajani/'
     },
-    {
-      name: 'Isha Vijay Mahajan',
-      role: 'Graphic Designer',
-      bio: 'I put shapes on screens.',
-      imageUrl: '/isha.png',
-      linkedinUrl: 'https://www.linkedin.com/in/isha-mahajan-22ab59259/'
-    }
   ];
 
   return (
