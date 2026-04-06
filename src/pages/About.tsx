@@ -117,6 +117,13 @@ const About: React.FC = () => {
       imageUrl: '/roshni.png',
       linkedinUrl: 'https://www.linkedin.com/in/roshni-rajani/'
     },
+    {
+      name: 'Isha Vijay Mahajan',
+      role: 'Graphic Designer',
+      bio: 'I put shapes on screens.',
+      imageUrl: '/isha.png',
+      linkedinUrl: 'https://www.linkedin.com/in/isha-mahajan-22ab59259/'
+    }
   ];
 
   return (
