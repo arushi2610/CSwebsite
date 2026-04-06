@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, Clock } from 'lucide-react';
+import { Calendar, MapPin, Clock, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Events.css';
 
@@ -12,7 +12,34 @@ interface Event {
   imageUrl: string;
 }
 
+interface FeaturedEvent {
+  title: string;
+  subtitle: string;
+  description: string;
+  date: string;
+  duration: string;
+  location: string;
+  mode: string;
+  platform: string;
+  audience: string;
+  format: string;
+}
+
 const Events: React.FC = () => {
+  const featuredEvent: FeaturedEvent = {
+    title: 'Build with AI: Code Social - Portfolio Builder Hackathon',
+    subtitle: 'Build a real portfolio project in 48 hours using AI',
+    description:
+      'A build-first hackathon designed to help beginners and builders ship a real, portfolio-ready project with practical AI tools.',
+    date: 'April 10th, 2026',
+    duration: '48 Hours',
+    location: 'Online',
+    mode: 'Devpost + Discord',
+    platform: 'Google AI Studio, Gemini API, Firebase / Cloud tools',
+    audience: 'Beginners, students, builders, and anyone interested in AI + projects',
+    format: 'Solo or team of up to 3'
+  };
+
   const pastEvents: Event[] = [
     {
       id: 1,
@@ -35,20 +62,62 @@ const Events: React.FC = () => {
   return (
     <section className="events-section py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* Event Calendar Section */}
-        <div className="luma-embed mb-16">
-          <h2 className="font-inter font-bold text-3xl md:text-4xl text-center mb-12">Our Event Calendar</h2>
-          <div className="luma-container">
-            <iframe
-              src="https://luma.com/embed/event/evt-b2mPKd7J5YDLFyx/simple"
-              width="600"
-              height="450"
-              frameBorder="0"
-              style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
-              allow="fullscreen; payment"
-              aria-hidden="false"
-              tabIndex={0}
-            />
+        {/* Featured Event Section */}
+        <div className="featured-event mb-16">
+          <div className="featured-event-copy">
+            <p className="featured-event-eyebrow">Featured event</p>
+            <h2 className="font-inter font-bold text-3xl md:text-4xl text-dark mb-4">{featuredEvent.title}</h2>
+            <p className="featured-event-subtitle">{featuredEvent.subtitle}</p>
+            <p className="featured-event-description">{featuredEvent.description}</p>
+
+            <div className="featured-event-meta">
+              <div className="featured-event-detail">
+                <Calendar size={18} />
+                <span>{featuredEvent.date}</span>
+              </div>
+              <div className="featured-event-detail">
+                <Clock size={18} />
+                <span>{featuredEvent.duration}</span>
+              </div>
+              <div className="featured-event-detail">
+                <MapPin size={18} />
+                <span>{featuredEvent.location}</span>
+              </div>
+              <div className="featured-event-detail">
+                <Users size={18} />
+                <span>{featuredEvent.mode}</span>
+              </div>
+            </div>
+
+            <div className="featured-event-tags">
+              <span>{featuredEvent.audience}</span>
+              <span>{featuredEvent.platform}</span>
+              <span>{featuredEvent.format}</span>
+            </div>
+
+            <div className="featured-event-actions">
+              <a
+                href="https://build-with-ai-cs.devpost.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Register for Event
+              </a>
+              <a href="/events" className="btn-outline">
+                Explore Events
+              </a>
+            </div>
+          </div>
+
+          <div className="featured-event-poster" aria-label={`${featuredEvent.title} poster`}>
+            <div className="poster-image-wrap">
+              <img src="/Build%20with%20AI%20Poster.png" alt="Build with AI hackathon poster" className="poster-image" />
+              <div className="poster-image-overlay">
+                <span>{featuredEvent.date}</span>
+                <span>{featuredEvent.duration}</span>
+              </div>
+            </div>
           </div>
         </div>
 
