@@ -85,7 +85,7 @@ const About: React.FC = () => {
     {
       name: 'Tejal Dhanvijay',
       role: 'Graphic Designer',
-      bio: 'Designing for years; don`t know if accidentally hitting the right button, turning wild ideas into visuals that wow every single time.',
+      bio: 'Designing for years; don`t know if accidentally hitting the right button',
       imageUrl: '/tejal.png',
       linkedinUrl: 'https://www.linkedin.com/in/tejal-dhanvijay/'
     },
