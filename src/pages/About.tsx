@@ -78,14 +78,14 @@ const About: React.FC = () => {
     {
       name: 'Sk Md Rizwan',
       role: 'Technical Lead',
-      bio: 'I make memes, code, and sometimes both at the same time.',
+      bio: 'I make memes, write code, and sometimes both at the same time.',
       imageUrl: '/riz.png',
       linkedinUrl: 'https://www.linkedin.com/in/skmdrizwan/'
     },
     {
       name: 'Tejal Dhanvijay',
       role: 'Graphic Designer',
-      bio: 'Designing for years; don`t know if accidentally hitting the right button, turning wild ideas into visuals that wow every single time.',
+      bio: 'Designing for years; don`t know if accidentally hitting the right button',
       imageUrl: '/tejal.png',
       linkedinUrl: 'https://www.linkedin.com/in/tejal-dhanvijay/'
     },
@@ -118,11 +118,18 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/roshni-rajani/'
     },
     {
-      name: 'Isha Vijay Mahajan',
-      role: 'Graphic Designer',
-      bio: 'I put shapes on screens.',
-      imageUrl: '/isha.png',
-      linkedinUrl: 'https://www.linkedin.com/in/isha-mahajan-22ab59259/'
+      name: 'Monique Moguel',
+      role: 'Executive Team Member',
+      bio: 'Having fun creating new things and supporting others doing the same.',
+      imageUrl: '/moni.png',
+      linkedinUrl: 'https://www.linkedin.com/in/moniquemoguel/'
+    },
+    {
+      name: 'Anshita Garg',
+      role: 'Executive Team Member',
+      bio: 'Building stuff,breaking stuff and pretending I know what I\'m doing.',
+      imageUrl: '/an.png',
+      linkedinUrl: 'https://www.linkedin.com/in/anshita-garg14/'
     }
   ];
 
