@@ -4,39 +4,6 @@ import './About.css';
 import { Linkedin } from 'lucide-react';
 
 const About: React.FC = () => {
-  const timelineEvents = [
-    {
-      year: 2020,
-      title: 'Foundation',
-      description: 'Code Social Community was founded as a learning-focused community dedicated to providing individuals with resources and opportunities to grow in various technologies.'
-    },
-    {
-      year: 2021,
-      title: 'First Learning Sessions',
-      description: 'We launched our first free learning sessions and mentorship programs, establishing the foundation for our educational approach.'
-    },
-    {
-      year: 2022,
-      title: 'Digital Platform Launch',
-      description: 'Expanded our reach with WhatsApp groups and Discord server to connect members globally and provide accessible learning resources.'
-    },
-    {
-      year: 2023,
-      title: 'Structured Mentorship',
-      description: 'Introduced our comprehensive mentorship program, connecting experienced professionals with newcomers in a structured learning environment.'
-    },
-    {
-      year: 2024,
-      title: 'Community Growth',
-      description: 'Established performance-based team structure with Core Team and Executive Team, fostering leadership development within our community.'
-    },
-    {
-      year: 2025,
-      title: 'Global Learning Hub',
-      description: 'Became a recognized global hub for hands-on learning, mentorship, and networking in the tech industry with members worldwide.'
-    }
-  ];
-
   const metrics = [
     { 
       value: '10,000+', 

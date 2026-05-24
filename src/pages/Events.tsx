@@ -182,11 +182,11 @@ const Events: React.FC = () => {
           <div className="luma-embed mb-16">
             <div className="luma-container">
               <iframe
-                src="https://luma.com/embed/event/evt-b2mPKd7J5YDLFyx/simple"
+                src="https://luma.com/embed/event/evt-DTO1hQspGoqH2lr/simple"
                 width="600"
                 height="450"
                 frameBorder={0}
-                style={{ border: '1px solid #bfcbda88', borderRadius: 4 }}
+                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
                 allow="fullscreen; payment"
                 aria-hidden="false"
                 tabIndex={0}
