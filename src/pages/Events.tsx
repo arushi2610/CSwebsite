@@ -198,7 +198,7 @@ const Events: React.FC = () => {
 
       {/* Winter of Code Social Section */}
 <section className="wocs-section py-20 bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b]">
-  <div className="container mx-auto px-4">
+  <div className="container mx-auto px-4 wocs-wrapper">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       
       {/* Left Content */}
@@ -242,18 +242,11 @@ const Events: React.FC = () => {
         <div className="flex flex-wrap gap-4">
           <a
             href="https://woc.codesocial.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
           >
             Explore Program
-          </a>
-
-          <a
-            href="https://wocsleaderboard.netlify.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary"
-          >
-            View Leaderboard
           </a>
         </div>
       </div>
@@ -268,11 +261,10 @@ const Events: React.FC = () => {
             loading="lazy"
           />
         </div>
-
-        {/* Floating Stats */}
+      {/* Floating Stats */}
         <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 hidden md:block">
-          <h4 className="text-3xl font-bold text-gray-900">500+</h4>
-          <p className="text-gray-600 text-sm">Community Contributors</p>
+          <h4 className="text-3xl font-bold text-orange-900">500+</h4>
+          <p className="text-white-600 text-sm">Community Contributors</p>
         </div>
 
         <div className="absolute -top-6 -right-6 bg-blue-600 rounded-2xl shadow-xl p-5 hidden md:block">
