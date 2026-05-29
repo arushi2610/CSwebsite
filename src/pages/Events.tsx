@@ -196,6 +196,86 @@ const Events: React.FC = () => {
         </div>
       </section>
 
+      {/* Winter of Code Social Section */}
+<section className="wocs-section py-20 bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b]">
+  <div className="container mx-auto px-4 wocs-wrapper">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left Content */}
+      <div>
+        <span className="inline-block px-4 py-2 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold mb-6">
+          Flagship Open Source Program
+        </span>
+
+        <h2 className="font-inter font-bold text-4xl md:text-5xl text-white mb-6 leading-tight">
+          Winter of Code Social
+        </h2>
+
+        <p className="text-gray-300 text-lg leading-relaxed mb-6">
+          Winter of Code Social is a community-driven open source program designed
+          to help students collaborate on real-world projects, improve development
+          skills, and connect with mentors from across the tech ecosystem.
+        </p>
+
+        <div className="space-y-4 mb-8">
+          <div className="flex items-center gap-3 text-gray-200">
+            <Calendar size={20} className="text-blue-400" />
+            <span>3-Month Open Source Journey</span>
+          </div>
+
+          <div className="flex items-center gap-3 text-gray-200">
+            <Users size={20} className="text-blue-400" />
+            <span>Collaborate with Developers & Mentors</span>
+          </div>
+
+          <div className="flex items-center gap-3 text-gray-200">
+            <Code size={20} className="text-blue-400" />
+            <span>Contribute to Real Projects</span>
+          </div>
+
+          <div className="flex items-center gap-3 text-gray-200">
+            <Trophy size={20} className="text-blue-400" />
+            <span>Earn Recognition & Build Your Portfolio</span>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="https://woc.codesocial.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Explore Program
+          </a>
+        </div>
+      </div>
+
+      {/* Right Side */}
+      <div className="relative">
+        <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+          <img
+            src="/wocs-banner.jpg"
+            alt="Winter of Code Social"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      {/* Floating Stats */}
+        <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 hidden md:block">
+          <h4 className="text-3xl font-bold text-orange-900">500+</h4>
+          <p className="text-white-600 text-sm">Community Contributors</p>
+        </div>
+
+        <div className="absolute -top-6 -right-6 bg-blue-600 rounded-2xl shadow-xl p-5 hidden md:block">
+          <h4 className="text-3xl font-bold text-white">50+</h4>
+          <p className="text-blue-100 text-sm">Open Source Projects</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* Past Events Section */}
       <section className="past-events py-20 bg-gray-50">
         <div className="container mx-auto px-4">
