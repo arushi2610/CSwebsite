@@ -17,6 +17,7 @@ interface Event {
 const Events: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [lumaLoaded, setLumaLoaded] = useState(false);
   
   const categories = [
     'All', 'Workshop', 'Meetup', 'Hackathon', 'Tech Talks', 'Webinar','Competition'
@@ -157,7 +158,7 @@ const Events: React.FC = () => {
     return categoryMatch && searchMatch;
   });
 
-  //const upcomingEvents = filteredEvents.filter(event => !event.isPast);
+  const upcomingEvents = filteredEvents.filter(event => !event.isPast);
   const pastEvents = filteredEvents.filter(event => event.isPast);
 
   return (
@@ -180,16 +181,32 @@ const Events: React.FC = () => {
           <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16">Event Calendar</h2>
           
           <div className="luma-embed mb-16">
-            <div className="luma-container">
+            {/* REPLACE: update the iframe src to your Luma calendar embed URL */}
+            <div className="luma-container" style={{ position: 'relative', minHeight: 450 }}>
+              {!lumaLoaded && (
+                <div style={{
+                  position: 'absolute', inset: 0,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: 'var(--text-muted)', fontSize: '1rem',
+                  border: '1px solid #bfcbda88', borderRadius: 4,
+                  background: 'var(--bg-surface)'
+                }}>
+                  Loading events…
+                </div>
+              )}
               <iframe
                 src="https://luma.com/embed/event/evt-b2mPKd7J5YDLFyx/simple"
                 width="600"
                 height="450"
-                frameBorder={0}
-                style={{ border: '1px solid #bfcbda88', borderRadius: 4 }}
+                style={{
+                  border: '1px solid #bfcbda88', borderRadius: 4,
+                  opacity: lumaLoaded ? 1 : 0,
+                  transition: 'opacity 0.3s ease'
+                }}
                 allow="fullscreen; payment"
                 aria-hidden="false"
                 tabIndex={0}
+                onLoad={() => setLumaLoaded(true)}
               />
             </div>
           </div>
@@ -259,6 +276,10 @@ const Events: React.FC = () => {
             alt="Winter of Code Social"
             className="w-full h-full object-cover"
             loading="lazy"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="#1e293b"/><text x="400" y="205" text-anchor="middle" fill="#60a5fa" font-size="28" font-family="sans-serif" font-weight="700">Winter of Code Social</text><text x="400" y="255" text-anchor="middle" fill="#94a3b8" font-size="18" font-family="sans-serif">Open Source Program</text></svg>')}`;
+            }}
           />
         </div>
       {/* Floating Stats */}
@@ -309,7 +330,7 @@ const Events: React.FC = () => {
             </div>
           </div>
           
-          {/* <h3 className="font-inter font-bold text-2xl mb-6">Upcoming Events</h3>
+          <h3 className="font-inter font-bold text-2xl mb-6">Upcoming Events</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {upcomingEvents.length > 0 ? (
               upcomingEvents.map(event => (
@@ -345,10 +366,20 @@ const Events: React.FC = () => {
               ))
             ) : (
               <div className="col-span-full text-center py-8">
-                <p className="text-gray-500">No upcoming events match your filters. Try adjusting your search.</p>
+                <p className="text-gray-500">
+                  No upcoming events right now — check back soon or{' '}
+                  <a
+                    href="https://lu.ma/codesocial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'var(--primary)', textDecoration: 'underline' }}
+                  >
+                    visit our Luma page
+                  </a>.
+                </p>
               </div>
             )}
-          </div> */}
+          </div>
           
           <h3 className="font-inter font-bold text-2xl mb-6">Past Events</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -395,6 +426,17 @@ const Events: React.FC = () => {
               </div>
             )}
           </div>
+
+          <p className="text-center mt-8" style={{ color: 'var(--text-secondary)' }}>
+            <a
+              href="https://lu.ma/codesocial"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--primary)', textDecoration: 'underline' }}
+            >
+              See all upcoming events on our Luma page →
+            </a>
+          </p>
         </div>
       </section>
 

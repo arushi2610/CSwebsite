@@ -1,0 +1,27 @@
+.notfound-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.notfound-content {
+  max-width: 500px;
+}
+
+.notfound-code {
+  font-family: 'Inter', sans-serif;
+  font-size: 7rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+.notfound-content h1 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}

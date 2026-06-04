@@ -4,6 +4,7 @@ import Benefits from '../components/Benefits/Benefits';
 import Events from '../components/Events/Events';
 import Testimonials from '../components/Testimonials/Testimonials';
 import ProjectShowcase from '../components/Projects/ProjectShowcase';
+import NewsletterSignup from '../components/Newsletter/NewsletterSignup';
 
 const Home: React.FC = () => {
   return (
@@ -11,8 +12,9 @@ const Home: React.FC = () => {
       <Hero />
       <Benefits />
       <Events />
-      { <ProjectShowcase /> }
+      <ProjectShowcase />
       <Testimonials />
+      <NewsletterSignup />
     </div>
   );
 };

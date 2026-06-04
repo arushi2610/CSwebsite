@@ -16,10 +16,15 @@ const Hero: React.FC = () => {
             Join a FREE learning-focused community dedicated to providing accessible resources and opportunities to excel in various technologies. Connect with mentors, peers, and industry experts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/get-involved" className="btn-primary flex items-center justify-center gap-2">
+            <a
+              href="https://discord.gg/MSTNyRSPYW"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary flex items-center justify-center gap-2"
+            >
               <span>Join the Community</span>
               <ArrowRight size={18} />
-            </Link>
+            </a>
             <Link to="/events" className="btn-secondary flex items-center justify-center gap-2">
               <span>Explore Learning Sessions</span>
             </Link>

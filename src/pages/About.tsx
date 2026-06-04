@@ -1,7 +1,17 @@
 import React from 'react';
-import { Users, Award, Target } from 'lucide-react';
+import { Users, Award, Target, Linkedin } from 'lucide-react';
 import './About.css';
-import { Linkedin } from 'lucide-react';
+
+const getInitialsPlaceholder = (name: string): string => {
+  const initials = name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="#333333"/><text x="200" y="245" text-anchor="middle" fill="#FF914D" font-size="140" font-family="sans-serif" font-weight="700">${initials}</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+};
 
 const About: React.FC = () => {
   const timelineEvents = [
@@ -216,13 +226,13 @@ Stay tuned, stay curious, and let’s build something amazing together.
 
       <section className="metrics-section py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16 text-#ff914d">Our Impact</h2>
-          
+          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16" style={{ color: 'var(--primary)' }}>Our Impact</h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {metrics.map((metric, index) => (
               <div key={index} className="metric-card bg-white border border-gray-200 rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="metric-value text-#ff914d text-4xl font-bold mb-2">{metric.value}</div>
-                <div className="metric-label text-#ff914d text-lg font-semibold mb-2">{metric.label}</div>
+                <div className="metric-value text-4xl font-bold mb-2" style={{ color: 'var(--primary)' }}>{metric.value}</div>
+                <div className="metric-label text-lg font-semibold mb-2" style={{ color: 'var(--primary)' }}>{metric.label}</div>
                 <div className="metric-description text-gray-600 text-sm">{metric.description}</div>
               </div>
             ))}
@@ -238,7 +248,15 @@ Stay tuned, stay curious, and let’s build something amazing together.
             {teamMembers.map((member, index) => (
               <div key={index} className="team-card">
                 <div className="member-image">
-                  <img src={member.imageUrl} alt={member.name} loading="lazy" />
+                  <img
+                    src={member.imageUrl}
+                    alt={member.name}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = getInitialsPlaceholder(member.name);
+                    }}
+                  />
                 </div>
                 <div className="member-info">
                 <div className="flex items-left gap-40">
