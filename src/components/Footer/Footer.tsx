@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
 
           <div className="footer-contact">
             <h3 className="font-inter font-bold text-lg mb-4">Get In Touch</h3>
-            <a href="mailto:codesocialcommunity@gmail.com" className="flex items-center gap-2 mb-3">
+            <a href="mailto:codesocialcommunity@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 mb-3">
               <Mail size={18} />
               <span>codesocialcommunity@gmail.com</span>
             </a>
@@ -60,12 +60,12 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400 mb-4 md:mb-0">
-            © 2023 Code Social. All rights reserved.
+            © {currentYear} Code Social. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-400">
             <Link to="/terms">Terms of Service</Link>
             <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/cookies">Cookie Policy</Link>
+            <Link to="/cookie-policy">Cookie Policy</Link>
           </div>
         </div>
       </div>

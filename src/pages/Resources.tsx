@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, Filter, ExternalLink } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import './Resources.css';
 
 interface Resource {
@@ -12,6 +13,12 @@ interface Resource {
 }
 
 const Resources: React.FC = () => {
+  useSEO({
+    title: 'Free Tech Resources | Code Social',
+    description: 'Explore 1,500+ free learning resources curated by the Code Social community — tutorials, guides, and tools for developers at every level.',
+    path: '/resources',
+  });
+
   const [activeFilter, setActiveFilter] = React.useState<string>('all');
   const [searchQuery, setSearchQuery] = React.useState<string>('');
   
@@ -247,15 +254,15 @@ const Resources: React.FC = () => {
           <div className="submit-resource-section">
             <h3 className="font-inter font-bold">Contribute to Our Resources</h3>
             <p>
-              Would you like to submit a resource? Do it on our GitHub!
+              Know a great resource we're missing? Send it our way and we'll add it to the list.
             </p>
-            <a 
-              href="https://github.com/Code-Social" 
-              target="_blank" 
+            <a
+              href="mailto:codesocialcommunity@gmail.com?subject=Resource%20Submission&body=Hi%20Code%20Social%20team%2C%0A%0AI%20would%20like%20to%20submit%20the%20following%20resource%3A%0A%0ATitle%3A%20%0ALink%3A%20%0ADescription%3A%20%0ATags%2FCategory%3A%20"
+              target="_blank"
               rel="noopener noreferrer"
               className="github-link"
             >
-              <span>Submit on GitHub</span>
+              <span>Submit a Resource</span>
               <ExternalLink size={16} />
             </a>
           </div>

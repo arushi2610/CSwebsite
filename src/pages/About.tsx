@@ -1,9 +1,26 @@
 import React from 'react';
-import { Users, Award, Target } from 'lucide-react';
+import { Users, Award, Target, Linkedin } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import './About.css';
-import { Linkedin } from 'lucide-react';
+
+const getInitialsPlaceholder = (name: string): string => {
+  const initials = name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="#333333"/><text x="200" y="245" text-anchor="middle" fill="#FF914D" font-size="140" font-family="sans-serif" font-weight="700">${initials}</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+};
 
 const About: React.FC = () => {
+  useSEO({
+    title: 'About Us | Code Social',
+    description: 'Learn how Code Social grew from a WhatsApp group to a global community of 10,000+ tech learners. Meet our team and discover our mission.',
+    path: '/about',
+  });
+
   const timelineEvents = [
     {
       year: 2020,
@@ -69,13 +86,6 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/malhotra-arushi/'
     },
     {
-      name: 'Kushagra Shrivastava',
-      role: 'Co-Founder',
-      bio: 'I talk to myself too often to be considered normal.',
-      imageUrl: '/kus.png',
-      linkedinUrl: 'https://www.linkedin.com/in/protonicgod/'
-    },
-    {
       name: 'Sk Md Rizwan',
       role: 'Technical Lead',
       bio: 'I make memes, write code, and sometimes both at the same time.',
@@ -97,25 +107,11 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/divya-shirsath-008702216/'
     },
     {
-      name: 'Namish Sahu',
-      role: 'Community Manager',
-      bio: 'I guard a human community',
-      imageUrl: '/namish.png',
-      linkedinUrl: 'https://www.linkedin.com/in/namish-sahu/'
-    },
-    {
       name: 'Anand Saundarya',
       role: 'Video Editor',
       bio: 'Editorius Maximus Memetica',
       imageUrl: '/anand.png',
       linkedinUrl: 'https://www.linkedin.com/in/anand-saundarya-728a00226/'
-    },
-    {
-      name: 'Roshni Rajani',
-      role: 'Community Manager',
-      bio: 'Little bit of Creativity, Little bit of Chaos.',
-      imageUrl: '/roshni.png',
-      linkedinUrl: 'https://www.linkedin.com/in/roshni-rajani/'
     },
     {
       name: 'Monique Moguel',
@@ -216,13 +212,13 @@ Stay tuned, stay curious, and let’s build something amazing together.
 
       <section className="metrics-section py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16 text-#ff914d">Our Impact</h2>
-          
+          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16" style={{ color: 'var(--primary)' }}>Our Impact</h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {metrics.map((metric, index) => (
               <div key={index} className="metric-card bg-white border border-gray-200 rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="metric-value text-#ff914d text-4xl font-bold mb-2">{metric.value}</div>
-                <div className="metric-label text-#ff914d text-lg font-semibold mb-2">{metric.label}</div>
+                <div className="metric-value text-4xl font-bold mb-2" style={{ color: 'var(--primary)' }}>{metric.value}</div>
+                <div className="metric-label text-lg font-semibold mb-2" style={{ color: 'var(--primary)' }}>{metric.label}</div>
                 <div className="metric-description text-gray-600 text-sm">{metric.description}</div>
               </div>
             ))}
@@ -238,7 +234,15 @@ Stay tuned, stay curious, and let’s build something amazing together.
             {teamMembers.map((member, index) => (
               <div key={index} className="team-card">
                 <div className="member-image">
-                  <img src={member.imageUrl} alt={member.name} loading="lazy" />
+                  <img
+                    src={member.imageUrl}
+                    alt={member.name}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = getInitialsPlaceholder(member.name);
+                    }}
+                  />
                 </div>
                 <div className="member-info">
                 <div className="flex items-left gap-40">

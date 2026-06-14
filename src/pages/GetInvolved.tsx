@@ -1,8 +1,15 @@
 import React from 'react';
 import { Users, Megaphone, UserPlus, HelpCircle } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import './GetInvolved.css';
 
 const GetInvolved: React.FC = () => {
+  useSEO({
+    title: 'Get Involved | Code Social',
+    description: 'Volunteer, mentor, sponsor, or collaborate with Code Social. Help us make tech education accessible to everyone, everywhere.',
+    path: '/get-involved',
+  });
+
   const faqs = [
     {
       question: "Who can join Code Social Community?",
