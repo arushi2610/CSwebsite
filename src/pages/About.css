@@ -12,11 +12,8 @@
 
 .about-hero .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(37, 37, 37, 0.8), rgba(30, 30, 30, 0.95));
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(20,20,20,0.75), rgba(26,26,26,0.97));
 }
 
 .section-title {
@@ -24,6 +21,8 @@
   padding-bottom: 1rem;
   display: inline-block;
   color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .section-title::after {
@@ -32,24 +31,41 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 30%;
+  width: 48px;
   height: 3px;
-  background-color: var(--primary);
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
 .mission-card {
   padding: 2.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
-  background-color: var(--bg-surface);
+  background: linear-gradient(160deg, #272727 0%, var(--bg-surface) 100%);
   border: 1px solid var(--bg-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .mission-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--primary);
   border-color: var(--primary);
+}
+
+.mission-card:hover::before {
+  opacity: 1;
 }
 
 .mission-card .icon-container {
@@ -154,26 +170,47 @@
 
 .metric-card {
   text-align: center;
-  padding: 2rem;
-  border-radius: 0.75rem;
-  background-color: var(--bg-base);
+  padding: 2.25rem 1.75rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #252525 0%, var(--bg-base) 100%);
   border: 1px solid var(--bg-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .metric-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-  border-color: var(--primary);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255,145,77,0.3);
+}
+
+.metric-card:hover::after {
+  transform: scaleX(1);
 }
 
 .metric-value {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2.75rem;
+  font-weight: 800;
   margin-bottom: 0.5rem;
   font-family: 'Inter', sans-serif;
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 .metric-label {
@@ -191,11 +228,11 @@
 
 /* Team Styles */
 .team-card {
-  background-color: var(--bg-surface);
+  background: linear-gradient(180deg, #272727 0%, var(--bg-surface) 100%);
   border: 1px solid var(--bg-border);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
   height: 100%;
   display: flex;
@@ -203,13 +240,13 @@
 }
 
 .team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--primary);
   border-color: var(--primary);
 }
 
 .member-image {
-  height: 280px;
+  height: 260px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -219,10 +256,12 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  filter: brightness(0.9) saturate(0.9);
 }
 
 .team-card:hover .member-image img {
   transform: scale(1.05);
+  filter: brightness(1) saturate(1);
 }
 
 .member-info {
@@ -276,19 +315,50 @@
   .timeline::after {
     left: 31px;
   }
-  
+
   .timeline-item {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
-  
+
   .timeline-item::after {
     left: 21px;
   }
-  
+
   .left, .right {
     left: 0;
     text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    min-height: 280px;
+  }
+
+  .mission-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .metric-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .metric-value {
+    font-size: 2rem;
+  }
+
+  .metric-label {
+    font-size: 1rem;
+  }
+
+  .member-image {
+    height: 200px;
+  }
+
+  .timeline-item {
+    padding-left: 55px;
+    padding-right: 12px;
   }
 }

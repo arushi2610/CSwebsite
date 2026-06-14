@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Calendar, MapPin, Clock, Filter, Search, Users, Presentation, Code, Trophy, Video, Coffee } from 'lucide-react';
+import { Calendar, MapPin, Clock, Filter, Search, Users, Presentation, Code, Trophy, Video, Coffee, ChevronDown } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import './Events.css';
 
 interface Event {
@@ -15,10 +16,14 @@ interface Event {
 }
 
 const Events: React.FC = () => {
+  useSEO({
+    title: 'Events & Workshops | Code Social',
+    description: 'Join free coding workshops, hackathons, and learning sessions by Code Social. Hands-on tech events for all skill levels.',
+    path: '/events',
+  });
+
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [lumaLoaded, setLumaLoaded] = useState(false);
-  
   const categories = [
     'All', 'Workshop', 'Meetup', 'Hackathon', 'Tech Talks', 'Webinar','Competition'
   ];
@@ -88,17 +93,6 @@ const Events: React.FC = () => {
       category: 'Tech Talks',
       imageUrl: '/Event6.jpg',
       description: 'An insightful discussion on pursuing higher education abroad, covering application processes, scholarships, and personal experiences.',
-      isPast: true
-    },
-    {
-      id: 7,
-      title: 'Roadmap for Flutter',
-      date: 'Oct 12, 2023',
-      time: '8:00 PM',
-      location: 'Virtual',
-      category: 'Tech Talks',
-      imageUrl: '/Event7.jpg',
-      description: 'An introductory workshop on Flutter development, covering the basics of building cross-platform mobile applications.',
       isPast: true
     },
     {
@@ -175,127 +169,57 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* Luma Event Calendar Section */}
-      <section className="events-calendar py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16">Event Calendar</h2>
-          
-          <div className="luma-embed mb-16">
-            {/* REPLACE: update the iframe src to your Luma calendar embed URL */}
-            <div className="luma-container" style={{ position: 'relative', minHeight: 450 }}>
-              {!lumaLoaded && (
-                <div style={{
-                  position: 'absolute', inset: 0,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: 'var(--text-muted)', fontSize: '1rem',
-                  border: '1px solid #bfcbda88', borderRadius: 4,
-                  background: 'var(--bg-surface)'
-                }}>
-                  Loading events…
-                </div>
-              )}
-              <iframe
-                src="https://luma.com/embed/event/evt-b2mPKd7J5YDLFyx/simple"
-                width="600"
-                height="450"
-                style={{
-                  border: '1px solid #bfcbda88', borderRadius: 4,
-                  opacity: lumaLoaded ? 1 : 0,
-                  transition: 'opacity 0.3s ease'
-                }}
-                allow="fullscreen; payment"
-                aria-hidden="false"
-                tabIndex={0}
-                onLoad={() => setLumaLoaded(true)}
-              />
-            </div>
+      {/* Winter of Code Social Section */}
+      <section className="wocs-section">
+        <div className="wocs-stars" aria-hidden="true" />
+        <div className="wocs-glow wocs-glow-left" aria-hidden="true" />
+        <div className="wocs-glow wocs-glow-right" aria-hidden="true" />
+
+        <div className="wocs-content">
+          <div className="wocs-heading">
+            <img src="/wocs-logo.png" alt="Winter of Code Social" className="wocs-logo" />
+          </div>
+
+          <p className="wocs-description">
+            Whether you're a beginner or a pro, this winter is your chance to
+            <br />dive into open source, team up, and make an impact.
+          </p>
+
+          <div className="wocs-badges">
+            <span className="wocs-badge">
+              <strong>Registration:</strong>&nbsp; Oct 1 - Dec 31, 2025
+            </span>
+            <span className="wocs-badge">
+              <strong>Coding Period:</strong>&nbsp; Nov 1, 2025 - Jan 31, 2026
+            </span>
+          </div>
+
+          <div className="wocs-actions">
+            <a
+              href="https://woc.codesocial.tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="wocs-btn-register"
+            >
+              Register Now <ChevronDown size={16} />
+            </a>
+          </div>
+
+          <div className="wocs-stats">
+            {[
+              { value: '10k+', label: 'Developers' },
+              { value: '1.5k+', label: 'Resources' },
+              { value: '500+', label: 'PRs' },
+              { value: '50+', label: 'Events' },
+            ].map(stat => (
+              <div key={stat.label} className="wocs-stat">
+                <span className="wocs-stat-number">{stat.value}</span>
+                <span className="wocs-stat-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Winter of Code Social Section */}
-<section className="wocs-section py-20 bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b]">
-  <div className="container mx-auto px-4 wocs-wrapper">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      
-      {/* Left Content */}
-      <div>
-        <span className="inline-block px-4 py-2 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold mb-6">
-          Flagship Open Source Program
-        </span>
-
-        <h2 className="font-inter font-bold text-4xl md:text-5xl text-white mb-6 leading-tight">
-          Winter of Code Social
-        </h2>
-
-        <p className="text-gray-300 text-lg leading-relaxed mb-6">
-          Winter of Code Social is a community-driven open source program designed
-          to help students collaborate on real-world projects, improve development
-          skills, and connect with mentors from across the tech ecosystem.
-        </p>
-
-        <div className="space-y-4 mb-8">
-          <div className="flex items-center gap-3 text-gray-200">
-            <Calendar size={20} className="text-blue-400" />
-            <span>3-Month Open Source Journey</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-gray-200">
-            <Users size={20} className="text-blue-400" />
-            <span>Collaborate with Developers & Mentors</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-gray-200">
-            <Code size={20} className="text-blue-400" />
-            <span>Contribute to Real Projects</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-gray-200">
-            <Trophy size={20} className="text-blue-400" />
-            <span>Earn Recognition & Build Your Portfolio</span>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="https://woc.codesocial.tech/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Explore Program
-          </a>
-        </div>
-      </div>
-
-      {/* Right Side */}
-      <div className="relative">
-        <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-          <img
-            src="/wocs-banner.jpg"
-            alt="Winter of Code Social"
-            className="w-full h-full object-cover"
-            loading="lazy"
-            onError={(e) => {
-              e.currentTarget.onerror = null;
-              e.currentTarget.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="#1e293b"/><text x="400" y="205" text-anchor="middle" fill="#60a5fa" font-size="28" font-family="sans-serif" font-weight="700">Winter of Code Social</text><text x="400" y="255" text-anchor="middle" fill="#94a3b8" font-size="18" font-family="sans-serif">Open Source Program</text></svg>')}`;
-            }}
-          />
-        </div>
-      {/* Floating Stats */}
-        <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 hidden md:block">
-          <h4 className="text-3xl font-bold text-orange-900">500+</h4>
-          <p className="text-white-600 text-sm">Community Contributors</p>
-        </div>
-
-        <div className="absolute -top-6 -right-6 bg-blue-600 rounded-2xl shadow-xl p-5 hidden md:block">
-          <h4 className="text-3xl font-bold text-white">50+</h4>
-          <p className="text-blue-100 text-sm">Open Source Projects</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
       {/* Past Events Section */}
       <section className="past-events py-20 bg-gray-50">
@@ -367,15 +291,16 @@ const Events: React.FC = () => {
             ) : (
               <div className="col-span-full text-center py-8">
                 <p className="text-gray-500">
-                  No upcoming events right now — check back soon or{' '}
+                  No upcoming events right now —{' '}
                   <a
-                    href="https://lu.ma/codesocial"
+                    href="https://codesocial.beehiiv.com/subscribe"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: 'var(--primary)', textDecoration: 'underline' }}
                   >
-                    visit our Luma page
-                  </a>.
+                    sign up to our email list
+                  </a>{' '}
+                  and we'll send you updates on upcoming events.
                 </p>
               </div>
             )}
@@ -427,16 +352,6 @@ const Events: React.FC = () => {
             )}
           </div>
 
-          <p className="text-center mt-8" style={{ color: 'var(--text-secondary)' }}>
-            <a
-              href="https://lu.ma/codesocial"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'var(--primary)', textDecoration: 'underline' }}
-            >
-              See all upcoming events on our Luma page →
-            </a>
-          </p>
         </div>
       </section>
 
@@ -474,7 +389,9 @@ const Events: React.FC = () => {
                 Whether you're an industry expert wanting to share knowledge, a company looking to engage with developers, or a community member with a great idea, we'd love to collaborate with you.
               </p>
               <a 
-                href="/GetInvolved"
+                href="mailto:codesocialcommunity@gmail.com?subject=Partner%20with%20Code%20Social"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-white inline-flex items-center gap-2"
               >
                 <span>Partner with Code Social</span>

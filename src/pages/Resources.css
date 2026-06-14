@@ -12,11 +12,8 @@
 
 .resources-hero .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(37, 37, 37, 0.8), rgba(30, 30, 30, 0.95));
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(20,20,20,0.75), rgba(26,26,26,0.97));
 }
 
 .resources-filter-bar {
@@ -37,12 +34,18 @@
 .search-box {
   display: flex;
   align-items: center;
-  background-color: var(--bg-border);
+  background-color: var(--bg-surface);
   border: 1px solid var(--bg-border);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
   padding: 0.5rem 1rem;
   width: 100%;
   max-width: 400px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255,145,77,0.1);
 }
 
 .search-box input {
@@ -83,34 +86,41 @@
 }
 
 .type-btn {
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.375rem;
-  background-color: var(--bg-border);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background-color: var(--bg-surface);
   color: var(--text-secondary);
-  font-size: 0.875rem;
-  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease;
   border: 1px solid var(--bg-border);
+  cursor: pointer;
 }
 
 .type-btn:hover {
-  background-color: var(--bg-surface);
+  border-color: rgba(255,145,77,0.4);
+  color: var(--text-primary);
 }
 
 .type-btn.active {
-  background-color: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), #e8783d);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(255,145,77,0.3);
 }
 
 .resource-card {
-  background-color: var(--bg-surface);
+  background: linear-gradient(160deg, #272727 0%, var(--bg-surface) 100%);
   border: 1px solid var(--bg-border);
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .resource-card:hover {
@@ -137,14 +147,15 @@
 
 .resource-type {
   display: inline-block;
-  padding: 0.375rem 0.875rem;
-  background-color: var(--primary);
-  color: var(--white);
+  padding: 0.3rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  color: var(--text-muted, #888);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 2rem;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   margin-bottom: 1rem;
 }
 
@@ -172,9 +183,9 @@
 .tag {
   display: inline-block;
   padding: 0.25rem 0.625rem;
-  background-color: rgba(255, 145, 77, 0.1);
-  color: var(--primary);
-  border: 1px solid rgba(255, 145, 77, 0.2);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #999;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   font-size: 0.8rem;
   font-weight: 500;
@@ -182,8 +193,9 @@
 }
 
 .tag:hover {
-  background-color: rgba(255, 145, 77, 0.2);
-  border-color: rgba(255, 145, 77, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .resource-link {
@@ -211,7 +223,7 @@
 
 .resources-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
 }
 
@@ -220,19 +232,42 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .resource-card {
     padding: 1.5rem;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-hero {
+    min-height: 280px;
+  }
+
+  .resource-card {
+    padding: 1.25rem;
+  }
+
+  .submit-resource-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
 .submit-resource-section {
-  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-base) 100%);
-  border-radius: 1rem;
-  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(255,145,77,0.05) 0%, transparent 60%);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
   text-align: center;
-  border: 1px solid var(--bg-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255,145,77,0.15);
+  box-shadow: var(--shadow-md);
   max-width: 600px;
   margin: 0 auto;
 }

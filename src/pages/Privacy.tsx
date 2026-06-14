@@ -79,7 +79,7 @@ const Privacy: React.FC = () => {
             </ul>
             <p>
               To exercise any of these rights, email us at{' '}
-              <a href="mailto:codesocialcommunity@gmail.com" className="legal-link">
+              <a href="mailto:codesocialcommunity@gmail.com" target="_blank" rel="noopener noreferrer" className="legal-link">
                 codesocialcommunity@gmail.com
               </a>.
             </p>
@@ -92,7 +92,7 @@ const Privacy: React.FC = () => {
             <h2 className="font-inter font-bold text-2xl">9. Contact Us</h2>
             <p>
               Questions or concerns? Contact us at{' '}
-              <a href="mailto:codesocialcommunity@gmail.com" className="legal-link">
+              <a href="mailto:codesocialcommunity@gmail.com" target="_blank" rel="noopener noreferrer" className="legal-link">
                 codesocialcommunity@gmail.com
               </a>.
             </p>

@@ -78,7 +78,7 @@ const Terms: React.FC = () => {
             <h2 className="font-inter font-bold text-2xl">9. Contact Us</h2>
             <p>
               Questions about these terms? Reach out to us at{' '}
-              <a href="mailto:codesocialcommunity@gmail.com" className="legal-link">
+              <a href="mailto:codesocialcommunity@gmail.com" target="_blank" rel="noopener noreferrer" className="legal-link">
                 codesocialcommunity@gmail.com
               </a>.
             </p>

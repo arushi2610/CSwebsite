@@ -1,34 +1,53 @@
 .footer {
-  background-color: var(--bg-base);
+  background: linear-gradient(180deg, var(--bg-surface) 0%, #161616 100%);
   color: var(--text-primary);
-  margin-left: 30px;
+  border-top: 1px solid var(--bg-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,145,77,0.4), transparent);
 }
 
 .footer-brand p {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--bg-border);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 50%;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
+  padding: 0.55rem;
+  transition: all 0.25s ease;
+  color: var(--text-secondary);
 }
 
 .social-links a:hover {
   background-color: var(--primary);
-  transform: translateY(-2px);
+  border-color: var(--primary);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255,145,77,0.3);
 }
 
 .footer-links a,
 .footer-contact a {
   color: var(--text-secondary);
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
   display: inline-block;
+  font-size: 0.95rem;
 }
 
 .footer-links a:hover,
@@ -38,21 +57,38 @@
 
 .btn-outline-primary {
   display: inline-block;
-  border: 2px solid var(--primary);
+  border: 1.5px solid var(--primary);
   color: var(--primary);
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
   background-color: transparent;
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary,#ff914d);
-  color: #000000 !important;
+  background: linear-gradient(135deg, var(--primary), #e8783d);
+  border-color: var(--primary);
+  color: #fff !important;
   transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
 }
 
 .btn-outline-primary:active {
   transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .footer-brand p,
+  .footer-links a,
+  .footer-contact a {
+    font-size: 0.875rem;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

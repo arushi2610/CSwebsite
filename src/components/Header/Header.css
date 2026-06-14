@@ -10,17 +10,22 @@
 }
 
 .header.scrolled {
-  background-color: rgba(30, 30, 30, 0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--bg-border);
+  background-color: rgba(26, 26, 26, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .logo-container {
   color: var(--text-primary);
   font-weight: 700;
   transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+  opacity: 0.85;
 }
 
 .logo-container img {
@@ -35,17 +40,20 @@
 }
 
 .nav-menu a {
-  color: var(--text-primary);
+  color: var(--text-secondary);
   font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.925rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   position: relative;
   padding: 0.5rem 0;
+  letter-spacing: 0.01em;
 }
 
 .nav-menu a:not(.btn-primary):hover,
 .nav-menu a:not(.btn-primary):focus {
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .nav-menu a:not(.btn-primary):after {
@@ -55,8 +63,9 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--primary);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  transition: width 0.25s ease;
 }
 
 .nav-menu a:not(.btn-primary):hover:after,
@@ -64,35 +73,7 @@
   width: 100%;
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: black !important;
-  padding: 0.75rem 2.25rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid var(--primary);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-  border-color: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 145, 77, 0.3);
-}
-
-.btn-primary:active {
-  background-color: var(--primary-active);
-  border-color: var(--primary-active);
-  transform: translateY(0);
-}
-
-.mobile-menu-button {
-  color: var(--text-primary);
-  transition: color 0.3s ease;
-}
-
-/* Active nav link — set by React Router NavLink */
+/* Active nav link */
 .nav-menu a:not(.btn-primary).active {
   color: var(--primary);
 }
@@ -101,7 +82,35 @@
   width: 100%;
 }
 
-/* Close button inside the mobile nav panel */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #e8783d 100%);
+  color: #fff !important;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+  border: none;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,145,77,0.35);
+  opacity: 0.95;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.mobile-menu-button {
+  color: var(--text-primary);
+  transition: color 0.25s ease;
+}
+
 .nav-close-button {
   display: none;
   background: none;
@@ -109,7 +118,7 @@
   color: var(--text-primary);
   cursor: pointer;
   padding: 0.5rem;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .nav-close-button:hover {
@@ -121,13 +130,15 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 75%;
+    width: 72%;
+    max-width: 320px;
     height: 100vh;
-    background-color: var(--bg-surface);
+    background: linear-gradient(160deg, #222 0%, #1a1a1a 100%);
+    border-left: 1px solid var(--bg-border);
     padding: 5rem 2rem 2rem;
     transition: right 0.3s ease;
     flex-direction: column;
-    border-left: 1px solid var(--bg-border);
+    box-shadow: -8px 0 40px rgba(0,0,0,0.5);
   }
 
   .nav-menu.open {
@@ -135,14 +146,15 @@
   }
 
   .nav-menu ul {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 
   .nav-menu a {
     color: var(--text-primary) !important;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     display: block;
-    padding: 0.75rem 0;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
   .nav-close-button {

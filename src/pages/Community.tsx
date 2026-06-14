@@ -1,18 +1,25 @@
 import React from 'react';
 import {
   Users,
-  MessageCircle,
+  Video,
   Share2,
   ExternalLink,
   Linkedin,
   Github,
-  Instagram
+  Instagram,
+  Mail
 } from 'lucide-react';
 import './Community.css';
 import { FaDiscord } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import { useSEO } from '../hooks/useSEO';
 
 const Community = () => {
+  useSEO({
+    title: 'Join the Community | Code Social',
+    description: 'Connect with 10,000+ tech learners on Discord, WhatsApp, Twitter, and Instagram. Be part of the Code Social global learning community.',
+    path: '/community',
+  });
   // Uncomment and use if needed later
   // const networkPartners = [
   //   {
@@ -67,6 +74,13 @@ const Community = () => {
       url: "https://www.instagram.com/codesocial.tech/",
       icon: <Instagram size={24} />,
       description: ""
+    },
+    {
+      platform: "Newsletter",
+      handle: "codesocial.beehiiv.com",
+      url: "https://codesocial.beehiiv.com/subscribe",
+      icon: <Mail size={24} />,
+      description: ""
     }
   ];
 
@@ -115,7 +129,7 @@ const Community = () => {
               <div className="stat-label">Active Learners</div>
             </div>
             <div className="stat-card">
-              <MessageCircle className="text-primary" size={40} />
+              <Video className="text-primary" size={40} />
               <div className="stat-value">50+</div>
               <div className="stat-label">Learning Sessions</div>
             </div>

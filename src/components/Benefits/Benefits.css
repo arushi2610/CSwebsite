@@ -1,11 +1,26 @@
 .benefits-section {
   background-color: var(--bg-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,145,77,0.05) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .benefits-section h2 {
   position: relative;
   padding-bottom: 1rem;
   color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .benefits-section h2::after {
@@ -14,25 +29,42 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 40%;
+  width: 48px;
   height: 3px;
-  background-color: var(--primary);
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
 .benefit-card {
-  padding: 2.5rem 1.5rem;
-  border-radius: 0.75rem;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
   text-align: center;
-  background-color: var(--bg-base);
+  background: linear-gradient(160deg, var(--bg-card, #242424) 0%, var(--bg-base) 100%);
   border: 1px solid var(--bg-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255,145,77,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .benefit-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.55), 0 0 0 1px var(--primary);
   border-color: var(--primary);
+}
+
+.benefit-card:hover::before {
+  opacity: 1;
 }
 
 .icon-container {
@@ -40,15 +72,41 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255,145,77,0.12);
   color: var(--primary);
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .icon-container {
+  background: rgba(255,145,77,0.2);
+  box-shadow: 0 0 20px rgba(255,145,77,0.2);
 }
 
 .benefit-card h3 {
   color: var(--text-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-size: 1.15rem;
 }
 
 .benefit-card p {
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+  .benefit-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .icon-container {
+    width: 52px;
+    height: 52px;
+  }
 }

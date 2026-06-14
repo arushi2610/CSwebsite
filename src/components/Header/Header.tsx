@@ -52,15 +52,13 @@ const Header: React.FC = () => {
             <li><NavLink to="/resources" onClick={closeMenu}>Resources</NavLink></li>
             <li><NavLink to="/community" onClick={closeMenu}>Community</NavLink></li>
             <li>
-              <a
-                href="https://discord.gg/MSTNyRSPYW"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/get-involved"
                 onClick={closeMenu}
                 className="btn-primary"
               >
                 Join Our Community
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

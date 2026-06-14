@@ -85,7 +85,7 @@ const CookiePolicy: React.FC = () => {
             <h2 className="font-inter font-bold text-2xl">6. Contact Us</h2>
             <p>
               Questions about our cookie use? Reach us at{' '}
-              <a href="mailto:codesocialcommunity@gmail.com" className="legal-link">
+              <a href="mailto:codesocialcommunity@gmail.com" target="_blank" rel="noopener noreferrer" className="legal-link">
                 codesocialcommunity@gmail.com
               </a>.
             </p>

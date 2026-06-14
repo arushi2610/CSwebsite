@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, Award, Target, Linkedin } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import './About.css';
 
 const getInitialsPlaceholder = (name: string): string => {
@@ -14,6 +15,12 @@ const getInitialsPlaceholder = (name: string): string => {
 };
 
 const About: React.FC = () => {
+  useSEO({
+    title: 'About Us | Code Social',
+    description: 'Learn how Code Social grew from a WhatsApp group to a global community of 10,000+ tech learners. Meet our team and discover our mission.',
+    path: '/about',
+  });
+
   const timelineEvents = [
     {
       year: 2020,
@@ -79,13 +86,6 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/malhotra-arushi/'
     },
     {
-      name: 'Kushagra Shrivastava',
-      role: 'Co-Founder',
-      bio: 'I talk to myself too often to be considered normal.',
-      imageUrl: '/kus.png',
-      linkedinUrl: 'https://www.linkedin.com/in/protonicgod/'
-    },
-    {
       name: 'Sk Md Rizwan',
       role: 'Technical Lead',
       bio: 'I make memes, write code, and sometimes both at the same time.',
@@ -107,25 +107,11 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/divya-shirsath-008702216/'
     },
     {
-      name: 'Namish Sahu',
-      role: 'Community Manager',
-      bio: 'I guard a human community',
-      imageUrl: '/namish.png',
-      linkedinUrl: 'https://www.linkedin.com/in/namish-sahu/'
-    },
-    {
       name: 'Anand Saundarya',
       role: 'Video Editor',
       bio: 'Editorius Maximus Memetica',
       imageUrl: '/anand.png',
       linkedinUrl: 'https://www.linkedin.com/in/anand-saundarya-728a00226/'
-    },
-    {
-      name: 'Roshni Rajani',
-      role: 'Community Manager',
-      bio: 'Little bit of Creativity, Little bit of Chaos.',
-      imageUrl: '/roshni.png',
-      linkedinUrl: 'https://www.linkedin.com/in/roshni-rajani/'
     },
     {
       name: 'Monique Moguel',

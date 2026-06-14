@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
 
           <div className="footer-contact">
             <h3 className="font-inter font-bold text-lg mb-4">Get In Touch</h3>
-            <a href="mailto:codesocialcommunity@gmail.com" className="flex items-center gap-2 mb-3">
+            <a href="mailto:codesocialcommunity@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 mb-3">
               <Mail size={18} />
               <span>codesocialcommunity@gmail.com</span>
             </a>
