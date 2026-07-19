@@ -1,0 +1,70 @@
+.home-luma {
+  padding: 5rem 0;
+  background: radial-gradient(circle at top, rgba(44, 44, 44, 0.9), rgba(18, 18, 18, 0.98));
+}
+
+.home-luma-header {
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.home-luma-header h2 {
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.home-luma-subtitle {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+.home-luma-frame {
+  display: flex;
+  justify-content: center;
+}
+
+.home-luma-card {
+  width: min(100%, 1080px);
+  background: #1a1a1a;
+  border-radius: 2rem;
+  padding: 1.75rem;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-luma-card iframe {
+  width: 100%;
+  height: 620px;
+  border: 0;
+  border-radius: 1.5rem;
+  background: #f9f0de;
+}
+
+@media (max-width: 900px) {
+  .home-luma-card {
+    padding: 1.25rem;
+  }
+
+  .home-luma-card iframe {
+    height: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-luma {
+    padding: 3.5rem 0;
+  }
+
+  .home-luma-card {
+    border-radius: 1.5rem;
+    padding: 1rem;
+  }
+
+  .home-luma-card iframe {
+    height: 480px;
+    border-radius: 1.25rem;
+  }
+}

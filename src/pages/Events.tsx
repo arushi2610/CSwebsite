@@ -154,60 +154,24 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* Winter of Code Social Section */}
-      <section className="wocs-section">
-        <div className="wocs-stars" aria-hidden="true" />
-        <div className="wocs-glow wocs-glow-left" aria-hidden="true" />
-        <div className="wocs-glow wocs-glow-right" aria-hidden="true" />
-
-        <div className="wocs-content">
-          <div className="wocs-heading">
-            <img src="/wocs-logo.png" alt="Winter of Code Social" className="wocs-logo" />
-          </div>
-
-          <p className="wocs-description">
-            Whether you're a beginner or a pro, this winter is your chance to
-            <br />dive into open source, team up, and make an impact.
-          </p>
-
-          <div className="wocs-badges">
-            <span className="wocs-badge">
-              <strong>Coding Period:</strong>&nbsp; November 1 - January 31, every year
-            </span>
-            <span className="wocs-badge">
-              <strong>Registration:</strong>&nbsp; Opening soon
-            </span>
-          </div>
-
-          <div className="wocs-actions">
-            <a
-              href="mailto:codesocialcommunity@gmail.com?subject=Partner%20with%20Winter%20of%20Code%20Social"
-              className="wocs-btn-register"
-            >
-              <Mail size={16} /> Partner with Us
-            </a>
-            <a
-              href="https://woc.codesocial.tech/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="wocs-btn-leaderboard"
-            >
-              Learn More
-            </a>
-          </div>
-
-          <div className="wocs-stats">
-            {[
-              { value: '10k+', label: 'Developers' },
-              { value: '1.5k+', label: 'Resources' },
-              { value: '500+', label: 'PRs' },
-              { value: '50+', label: 'Events' },
-            ].map(stat => (
-              <div key={stat.label} className="wocs-stat">
-                <span className="wocs-stat-number">{stat.value}</span>
-                <span className="wocs-stat-label">{stat.label}</span>
-              </div>
-            ))}
+      {/* Luma Event Calendar Section */}
+      <section className="events-calendar py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16">Event Calendar</h2>
+          
+          <div className="luma-embed mb-16">
+            <div className="luma-container">
+              <iframe
+                src="https://luma.com/embed/event/evt-DTO1hQspGoqH2lr/simple"
+                width="600"
+                height="450"
+                frameBorder={0}
+                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+                allow="fullscreen; payment"
+                aria-hidden="false"
+                tabIndex={0}
+              />
+            </div>
           </div>
         </div>
       </section>
