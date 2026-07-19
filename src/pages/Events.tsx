@@ -154,28 +154,6 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* Luma Event Calendar Section */}
-      <section className="events-calendar py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16">Event Calendar</h2>
-          
-          <div className="luma-embed mb-16">
-            <div className="luma-container">
-              <iframe
-                src="https://luma.com/embed/event/evt-DTO1hQspGoqH2lr/simple"
-                width="600"
-                height="450"
-                frameBorder={0}
-                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
-                allow="fullscreen; payment"
-                aria-hidden="false"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Past Events Section */}
       <section className="past-events py-20 bg-gray-50">
         <div className="container mx-auto px-4">
