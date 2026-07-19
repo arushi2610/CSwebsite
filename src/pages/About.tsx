@@ -1,7 +1,18 @@
 import React from 'react';
-import { Users, Award, Target } from 'lucide-react';
+import { Users, Award, Target, Linkedin } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import './About.css';
-import { Linkedin } from 'lucide-react';
+
+const getInitialsPlaceholder = (name: string): string => {
+  const initials = name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="#333333"/><text x="200" y="245" text-anchor="middle" fill="#FF914D" font-size="140" font-family="sans-serif" font-weight="700">${initials}</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+};
 
 const About: React.FC = () => {
   const metrics = [
@@ -36,23 +47,16 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/malhotra-arushi/'
     },
     {
-      name: 'Kushagra Shrivastava',
-      role: 'Co-Founder',
-      bio: 'I talk to myself too often to be considered normal.',
-      imageUrl: '/kus.png',
-      linkedinUrl: 'https://www.linkedin.com/in/protonicgod/'
-    },
-    {
       name: 'Sk Md Rizwan',
       role: 'Technical Lead',
-      bio: 'I make memes, code, and sometimes both at the same time.',
+      bio: 'I make memes, write code, and sometimes both at the same time.',
       imageUrl: '/riz.png',
       linkedinUrl: 'https://www.linkedin.com/in/skmdrizwan/'
     },
     {
       name: 'Tejal Dhanvijay',
       role: 'Graphic Designer',
-      bio: 'Designing for years; don`t know if accidentally hitting the right button, turning wild ideas into visuals that wow every single time.',
+      bio: 'Designing for years; don`t know if accidentally hitting the right button',
       imageUrl: '/tejal.png',
       linkedinUrl: 'https://www.linkedin.com/in/tejal-dhanvijay/'
     },
@@ -64,13 +68,6 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/divya-shirsath-008702216/'
     },
     {
-      name: 'Namish Sahu',
-      role: 'Community Manager',
-      bio: 'I guard a human community',
-      imageUrl: '/namish.png',
-      linkedinUrl: 'https://www.linkedin.com/in/namish-sahu/'
-    },
-    {
       name: 'Anand Saundarya',
       role: 'Video Editor',
       bio: 'Editorius Maximus Memetica',
@@ -78,18 +75,18 @@ const About: React.FC = () => {
       linkedinUrl: 'https://www.linkedin.com/in/anand-saundarya-728a00226/'
     },
     {
-      name: 'Roshni Rajani',
-      role: 'Community Manager',
-      bio: 'Little bit of Creativity, Little bit of Chaos.',
-      imageUrl: '/roshni.png',
-      linkedinUrl: 'https://www.linkedin.com/in/roshni-rajani/'
+      name: 'Monique Moguel',
+      role: 'Executive Team Member',
+      bio: 'Having fun creating new things and supporting others doing the same.',
+      imageUrl: '/moni.png',
+      linkedinUrl: 'https://www.linkedin.com/in/moniquemoguel/'
     },
     {
-      name: 'Isha Vijay Mahajan',
-      role: 'Graphic Designer',
-      bio: 'I put shapes on screens.',
-      imageUrl: '/isha.png',
-      linkedinUrl: 'https://www.linkedin.com/in/isha-mahajan-22ab59259/'
+      name: 'Anshita Garg',
+      role: 'Executive Team Member',
+      bio: 'Building stuff,breaking stuff and pretending I know what I\'m doing.',
+      imageUrl: '/an.png',
+      linkedinUrl: 'https://www.linkedin.com/in/anshita-garg14/'
     }
   ];
 
@@ -141,29 +138,10 @@ const About: React.FC = () => {
         </div>
       </section>
 
-{/* 
-      <section className="timeline-section py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16">Our Journey</h2>
-          <div className="timeline">
-            {timelineEvents.map((event, index) => (
-              <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-                <div className="timeline-content">
-                  <div className="year">{event.year}</div>
-                  <h3 className="font-inter font-bold text-xl mb-2">{event.title}</h3>
-                  <p>{event.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-*/}
-
       <section className="journey-section py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-10">Our Journey</h2>
-          <p className="max-w-4xl mx-auto text-center text-WHITE text-lg leading-relaxed">
+          <p className="max-w-4xl mx-auto text-center text-white text-lg leading-relaxed">
             Hi, I’m Arushi, Founder of Code Social 👋<br /><br />
 I wasn’t coding since I was 12. I actually started learning when I was in college, but I knew I wanted to learn. When I joined random WhatsApp groups to ask questions, I was often judged for being “too behind.” I saw others get shut down too, especially beginners just getting started.<br /><br />
 So in 2023, I created a WhatsApp group to share beginner-friendly resources, free of judgment. That small space grew into Code Social, a global community of 10,000+ learners and a team of 11 organizing workshops, meetups, and challenges to make tech more accessible and fun.
@@ -176,13 +154,13 @@ Stay tuned, stay curious, and let’s build something amazing together.
 
       <section className="metrics-section py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16 text-#ff914d">Our Impact</h2>
-          
+          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16" style={{ color: 'var(--primary)' }}>Our Impact</h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {metrics.map((metric, index) => (
               <div key={index} className="metric-card bg-white border border-gray-200 rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="metric-value text-#ff914d text-4xl font-bold mb-2">{metric.value}</div>
-                <div className="metric-label text-#ff914d text-lg font-semibold mb-2">{metric.label}</div>
+                <div className="metric-value text-4xl font-bold mb-2" style={{ color: 'var(--primary)' }}>{metric.value}</div>
+                <div className="metric-label text-lg font-semibold mb-2" style={{ color: 'var(--primary)' }}>{metric.label}</div>
                 <div className="metric-description text-gray-600 text-sm">{metric.description}</div>
               </div>
             ))}
@@ -198,7 +176,15 @@ Stay tuned, stay curious, and let’s build something amazing together.
             {teamMembers.map((member, index) => (
               <div key={index} className="team-card">
                 <div className="member-image">
-                  <img src={member.imageUrl} alt={member.name} loading="lazy" />
+                  <img
+                    src={member.imageUrl}
+                    alt={member.name}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = getInitialsPlaceholder(member.name);
+                    }}
+                  />
                 </div>
                 <div className="member-info">
                 <div className="flex items-left gap-40">

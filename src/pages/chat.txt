@@ -1,0 +1,141 @@
+09:42:55	 From Siri Vennela : How many PRs should we make ?
+09:43:06	 From Nandan aghera : Like is this similar to GSoC?
+09:43:51	 From Sejal Patil  to  Code Social | Arushi(direct message) : Swags? Goodies? Anything?
+09:44:55	 From Nandan aghera : Like is this similar to GSoC?               ANDIt would be good if there were goodies for all contributors :)
+09:44:59	 From Team | Kushagra : https://woc.codesocial.tech/
+09:45:01	 From Code Social | Rizwan : woc.codesocial.tech
+09:45:34	 From Team | Kushagra : Reacted to "https://woc.codeso..." with ❤️
+09:45:40	 From Swaroop : Reacted to "https://woc.codesoci..." with ❤️
+09:45:42	 From Swaroop : Removed a ❤️ reaction from "https://woc.codesoci..."
+09:45:43	 From Trishit Bhowmik : i have some questions regarding my job as project admin , can i ask?
+09:45:51	 From Aditya Singh : What are the perks of mentors? :)
+09:46:07	 From Team | Kushagra : We will be explaining responsibilities in a bit for each role in this call!
+09:46:34	 From mrigakshirathore : I have not received the selection mail yet
+09:46:35	 From HP : how many will get goodies ?
+09:46:36	 From Nandan aghera : 😂Yeah Sure
+09:46:58	 From Disha : What will be the minimum points for certificate
+09:47:00	 From Trishit Bhowmik : so i will ask later, cool
+09:47:04	 From Nandan aghera : Replying to "how many will get go..."
+
+those are in Top Leaderborad
+09:48:01	 From Niteesha Yadav Panchadarla : Till which leaderboard position will recieve goodies
+09:48:37	 From mrigakshirathore : Is there any label which will be assigned to the contributions after the PR gets merge ?
+09:50:00	 From Code Social | Rizwan  to  Code Social | Arushi(direct message) : Explain the 3 roles pehle
+09:50:36	 From mrigakshirathore : And from where and how can I find the projects under this program?
+09:50:36	 From srinibash : Where is the link ?? Can't get
+09:50:47	 From Code Social | Rizwan : Reacted to https://woc.codesoci... with "❤️"
+09:50:53	 From Nandan aghera : Replying to "Where is the link ??..."
+
+https://woc.codesocial.tech/
+09:50:55	 From Code Social | Rizwan : https://woc.codesocial.tech/
+09:51:11	 From Team | Kushagra : Reacted to "https://woc.codeso..." with ❤️
+09:51:22	 From Code Social | Rizwan : Go to the projects tab on the website to see all the registered projects
+09:51:50	 From Siri Vennela : Can you please send that guide now ?
+09:53:06	 From Nikhil Singh : Which pr to give level 1 and in which to give level 3?
+09:54:23	 From Team | Kushagra : https://discord.gg/YnpzWStDVz
+09:54:24	 From Code Social | Rizwan  to  Code Social | Arushi(direct message) : Tell them to put the correct labels before merging pr
+09:56:19	 From Adedunla Akerele-Ale of VeraYou Inc.  to  Code Social | Arushi(direct message) : I signed up as project administrator and mentor as well as contributor but only got contributor
+10:04:28	 From Trishit Bhowmik : in my discord , i don't the second and third channel,
+10:06:15	 From Sunil Kumar : Helo Sir
+10:07:00	 From Sunil Kumar : Can You provide certificate for this metting ?
+10:07:54	 From Anand : go to channel and roles
+10:08:21	 From Nandan aghera : Its working
+10:08:24	 From Trishit Bhowmik : found it , thanks
+10:08:27	 From Nandan aghera : Select all channels
+10:08:31	 From HP : yes sir found it
+10:10:03	 From Code Social | Rizwan  to  Code Social | Arushi(direct message) : Tell him not to merge
+10:11:12	 From Nandan aghera : Level 1 -  2 pointsLevel 2 - 5 pointsLevel 3 - 11 points
+10:11:27	 From Palchhin : both on the issue and the PR?
+10:11:39	 From Code Social | Rizwan  to  Code Social | Arushi(direct message) : 30seconds
+10:11:45	 From SHAMLI : Can I participate as both a contributor and a mentor?
+10:11:48	 From Code Social | Rizwan  to  Code Social | Arushi(direct message) : Itna bura nhi hai mera backend😭
+10:11:52	 From mrigakshirathore : Can an individual become both contributor as well as mentor?
+10:12:44	 From Aditya Singh : Perks for mentors like goodies?
+10:14:50	 From mrigakshirathore : How are projects assigned to the mentor?
+10:15:21	 From Aditya Singh : Not receive the documentation as I have enrolled as mentor
+10:15:51	 From Akshay : Replying to "Not receive the docu..."
+
++1
+10:15:52	 From Team | Kushagra : https://woc.codesocial.tech/resources
+10:16:03	 From srinibash : So basically it's a compitition ..
+10:16:08	 From mrigakshirathore  to  Code Social | Arushi(direct message) : I want to collaborate in this open source community
+10:16:22	 From srinibash : Compition*
+10:16:56	 From Ayna Ashraf : This program is for 3 months.. Is it necessary to contribute asap.. I mean we may learn and than apply the skill in project and that may take time..
+10:17:09	 From SHAMLI : I was wondering, will participants receive badges similar to Hacktoberfest that we can showcase on our GitHub profiles?
+10:17:48	 From Nandan aghera  to  Code Social | Arushi(direct message) : For contributors how they can contribute (find projects) like by just you showed by chatting with project admin?Any other way?
+10:19:36	 From Akshay : | is pipe
+10:19:43	 From Team | Kushagra : Reacted to "| is pipe" with 👏
+10:19:47	 From Team | Kushagra : Replying to "| is pipe"
+
+Thank you!
+10:19:48	 From Code Social | Rizwan : Reacted to | is pipe with "👏"
+10:19:50	 From Team | Kushagra : Reacted to "| is pipe" with 😂
+10:20:05	 From Nandan aghera : Everyone gets confused with Social winter of code and Winter of code social LOL
+10:20:27	 From Nandan aghera : Reacted to "| is pipe" with 😂
+10:21:20	 From mrigakshirathore  to  Code Social | Arushi(direct message) : I want to collaborate in this open source community. How can I ?
+10:22:09	 From Nandan aghera : In short, So we need to ask them(project admin) right to give the level and label.
+10:22:14	 From Code Social | Arushi  to  mrigakshirathore(direct message) : you can contribute to the projects
+10:22:14	 From Yash Shah  to  Code Social | Arushi(direct message) : Should Project admins keep less non technical communications with contributors ?
+10:22:34	 From mrigakshirathore  to  Code Social | Arushi(direct message) : As I have not received any welcome mail yet. Is there any possibility that I will get ?
+10:22:35	 From Aditya Singh : Mentors will get their projects in which they are collaborating with or they can choose?
+10:22:42	 From Yash Shah  to  Code Social | Arushi(direct message) : and project admins can keep google meet or something... ?
+10:23:16	 From Code Social | Arushi  to  Yash Shah(direct message) : explain?
+10:23:50	 From Yash Shah  to  Code Social | Arushi(direct message) : Should Project admins keep less non technical communications with contributors ?
+project admins can keep google meet with contributors. ?
+10:23:51	 From Nandan aghera  to  Code Social | Arushi(direct message) : is this is the label - swoconly this?
+10:24:06	 From Ayush : @Code Social | Arushi mam what are the rewards for the Top contributors?
+10:24:09	 From mrigakshirathore  to  Code Social | Arushi(direct message) : Okay, thank you so much
+10:24:35	 From Aditya Singh : I have not been assigned with any project that's why I asked
+10:24:37	 From Yash Shah  to  Code Social | Arushi(direct message) : means any kind of communication... accept github comments or discord....
+they should allow contributor to reach to them
+10:24:38	 From Yash Shah  to  Code Social | Arushi(direct message) : ?
+10:25:05	 From Ayush : @Team | Kushagra Sir what are the rewards for the Top contributors?
+10:25:09	 From Yash Shah  to  Code Social | Arushi(direct message) : Cool!!
+10:25:30	 From Nandan aghera  to  Code Social | Arushi(direct message) : is this is the label - swoconly this?
+10:25:49	 From Sunil Kumar : Mam how I can get discord link
+10:25:55	 From Akshay : Need to drop-off for another meeting. It was nice seeing you all.
+10:26:10	 From Nandan aghera : Replying to "Mam how I can get di..."
+
+https://discord.gg/YnpzWStDVz
+10:26:17	 From Team | Kushagra : https://discord.gg/YnpzWStDVz
+10:26:26	 From Team | Kushagra : Label: wocs
+10:26:27	 From Nikhil Singh : Is their swags for PA and MENTORS too??
+10:27:38	 From Sunil Kumar : Mam what about certifications ?
+10:28:17	 From Bhavesh Gangurde : do we have to work on  projects that mentors will assign?
+10:29:17	 From Bhavesh Gangurde : ok understood thanks
+10:29:25	 From Nikhil Singh : PAs have to make an document for project for wocs?
+10:29:37	 From mrigakshirathore : I’ll take your leave now. It was great connecting with you all.
+10:29:38	 From Code Social | Rizwan : Replying to "PAs have to make an ..." 
+
+ Nope
+10:30:31	 From Nandan aghera : working professionals can participate right?
+10:31:12	 From Trishit Bhowmik : as a project admin, should i merge doc changes pr??
+10:31:57	 From Trishit Bhowmik : like if someone makes changes to my readme, then should i merge those?
+10:32:11	 From Code Social | Rizwan : Replying to "as a project admin, ..." 
+
+ Your wish if u want to accept any pr contribution or not. If u do accept, make sure to put the proper labels before merging
+10:32:29	 From Trishit Bhowmik : got it
+10:32:39	 From Nandan aghera : Ok less go 🚀. let's start OPEN-SOURCE
+10:32:40	 From Trishit Bhowmik : Replying to "as a project admin, ..."
+
+got it
+10:32:54	 From Bhavesh Gangurde : suppose i am working on a project and i need help for it can i get  from discord?
+10:32:59	 From Sunil Kumar : Sir can I get participation certificate of this session
+10:33:01	 From Nikhil Singh : Bymistake if pa gives level 3 instead of level 2 then??
+10:33:03	 From Nandan aghera : 🥶❄️
+10:33:19	 From srinibash : Let's go .. I always want to contribute to open source
+10:33:46	 From mrigakshirathore : This is going to be my 3rd open source contribution
+10:33:51	 From mrigakshirathore : Excited!!!
+10:33:54	 From Nandan aghera : 🚀🥶☕Lets start CONTRIBUTING GUYSS!!
+10:33:59	 From Code Social | Rizwan : Replying to "Bymistake if pa give..." 
+
+ U can change labels before merging any pr. As soon as a pr is merged the labels are final. If u still want any alterations please reach out to the team on discord
+10:34:32	 From 12 S-E Sagnik Chakraborty : We can officially start creating PRs, right?
+10:35:23	 From Aman Ajaz : No of active project?
+10:35:45	 From Code Social | Rizwan : Replying to "No of active project..." 
+
+ 20+ till now
+10:36:27	 From Anand : letss gooo!!!!
+10:36:27	 From Nandan aghera : Bye @Code Social | Arushi @Team | Kushagra Thank You for beautiful session
+10:36:33	 From mrigakshirathore : it was a great meeting you all! Let’s connect on LinkedIn :)
+10:36:35	 From Rishima : Reacted to "it was a great meeti..." with 👍

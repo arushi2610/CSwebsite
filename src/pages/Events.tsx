@@ -1,6 +1,28 @@
-import React, { useState } from 'react';
-import { Calendar, MapPin, Clock, Filter, Search, Users, Presentation, Code, Trophy, Video, Coffee } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Calendar, MapPin, Clock, Users, Presentation, Code, Trophy, Video, Coffee, Mail } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import './Events.css';
+
+// Public Google Calendar embed (no API key required). To change the calendar,
+// swap the `src` value with your calendar ID from Settings → Integrate calendar.
+const GOOGLE_CALENDAR_EMBED_SRC =
+  'https://calendar.google.com/calendar/embed?src=9365dc46515ee05fecadd380002a268dc2ed3e53b18cd761ddd514516c7e0d0c%40group.calendar.google.com&ctz=America%2FChicago';
+
+// The month grid is unreadable on phones; agenda mode lists events instead.
+const useCalendarSrc = () => {
+  const [isNarrow, setIsNarrow] = useState(
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 768px)');
+    const onChange = (e: MediaQueryListEvent) => setIsNarrow(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  return isNarrow ? `${GOOGLE_CALENDAR_EMBED_SRC}&mode=AGENDA` : GOOGLE_CALENDAR_EMBED_SRC;
+};
 
 interface Event {
   id: number;
@@ -12,103 +34,51 @@ interface Event {
   imageUrl: string;
   description: string;
   isPast: boolean;
+  registrationUrl?: string;
 }
 
 const Events: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  
-  const categories = [
-    'All', 'Workshop', 'Meetup', 'Hackathon', 'Tech Talks', 'Webinar','Competition'
-  ];
-  
+  useSEO({
+    title: 'Events & Workshops | Code Social',
+    description: 'Join free coding workshops, hackathons, and learning sessions by Code Social. Hands-on tech events for all skill levels.',
+    path: '/events',
+  });
+
+  const calendarSrc = useCalendarSrc();
+
   const events: Event[] = [
     {
       id: 1,
-      title: 'Linkedin X-Ray',
-      date: 'March 22, 2025',
-      time: '8:00 PM - 10:00 PM',
+      title: 'How to Choose the Right Tech Career',
+      date: 'July 25, 2026',
+      time: '9:00 AM',
       location: 'Virtual',
-      category: 'Workshop',
-      imageUrl: '/Event-1.jpg',
-      description: 'Get your Linkedin reviewed by experts.',
-      isPast: true
+      category: 'Tech Talks',
+      imageUrl: '/chitechweek.png',
+      description: 'A Chicago Tech Week 2026 recommended event, presented by Code Social.',
+      isPast: false,
+      registrationUrl: 'https://luma.com/ek7m5ctg'
     },
     {
       id: 2,
-      title: 'Coding Quest Week',
-      date: 'June 30, 2025',
-      time: '5:30 PM - 7:30 PM',
-      location: 'Virtual',
+      title: 'Build with AI: Portfolio Builder Hackathon',
+      date: 'April 10, 2026',
+      time: '48 Hours',
+      location: 'Online',
       category: 'Hackathon',
-      imageUrl: '/Event2.jpg',
-      description: '7 day DSA contest',
+      imageUrl: '/Build%20with%20AI%20Poster.png',
+      description: 'A 48-hour hackathon to build an AI-powered portfolio project.',
       isPast: true
     },
     {
       id: 3,
-      title: 'Meme Competition',
-      date: 'July 5, 2025',
-      time: '10:00 AM - 4:00 PM',
-      location: 'Virtual',
-      category: 'Competition',
-      imageUrl: '/Event3.jpg',
-      description: 'A full-day immersive workshop covering Python basics through advanced topics. Perfect for beginners and those looking to refresh their Python skills.',
-      isPast: true
-    },
-    {
-      id: 4,
-      title: 'Placement Mentorship For Freshers',
-      date: 'Oct 2, 2024',
-      time: '6:30 PM - 8:30 PM',
-      location: 'Virtual',
-      category: 'Webinar',
-      imageUrl: '/Event4.jpg',
-      description: 'Learn how to build cross-platform mobile applications using Flutter. This webinar will cover UI design, state management, and deployment.',
-      isPast: true
-    },
-    {
-      id: 5,
-      title: 'From College to Career',
-      date: 'August 1-3, 2025',
-      time: 'All Day',
-      location: 'Virtual',
-      category: 'Tech Talks',
-      imageUrl: '/Event5.jpg',
-      description: 'Mastering the top 5 interview questions',
-      isPast: true
-    },
-    {
-      id: 6,
-      title: 'Pursuing Masters Abroad',
-      date: 'Oct 12, 2023',
-      time: '10:00 AM - 12:00 PM',
-      location: 'Virtual',
-      category: 'Tech Talks',
-      imageUrl: '/Event6.jpg',
-      description: 'An insightful discussion on pursuing higher education abroad, covering application processes, scholarships, and personal experiences.',
-      isPast: true
-    },
-    {
-      id: 7,
-      title: 'Roadmap for Flutter',
-      date: 'Oct 12, 2023',
-      time: '8:00 PM',
-      location: 'Virtual',
-      category: 'Tech Talks',
-      imageUrl: '/Event7.jpg',
-      description: 'An introductory workshop on Flutter development, covering the basics of building cross-platform mobile applications.',
-      isPast: true
-    },
-    {
-      id: 8,
-      title: 'Why Don\'t you react',
-      date: 'June 8, 2024',
-      time: '3:30 PM',
-      location: 'Virtual',
-      category: 'Workshop',
-      imageUrl: '/Event8.jpg',
-      description: 'An introductory workshop on React development, covering the basics of building user interfaces with React.',
+      title: 'Winter of Code Social 2025-26',
+      date: 'Nov 2025 - Jan 2026',
+      time: 'Season-long',
+      location: 'Online',
+      category: 'Hackathon',
+      imageUrl: '/wocs-logo.png',
+      description: 'Our flagship open-source program — the first edition drew 1,500+ participants and 15 community partners.',
       isPast: true
     }
   ];
@@ -146,19 +116,29 @@ const Events: React.FC = () => {
     }
   ];
 
-  const filteredEvents = events.filter(event => {
-    // Filter by category
-    const categoryMatch = activeFilter === 'all' || event.category.toLowerCase() === activeFilter.toLowerCase();
-    
-    // Filter by search query
-    const searchMatch = event.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                        event.description.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    return categoryMatch && searchMatch;
-  });
+  // Past in-person initiatives / highlights (title-only for now).
+  // Add a photo to each by setting `imageUrl` to a file in public/.
+  const initiatives = [
+    {
+      title: "Offline Debut — Quantum Ready: Preparing Today's Workforce for Tomorrow's Tech",
+      imageUrl: '/CSU25.jpg',
+    },
+    {
+      title: 'ThinkChicago Launchpad',
+      imageUrl: '/ChiThinkPad.jpeg',
+    },
+    {
+      title: 'Winter of Code Social — High School Track Finale',
+      imageUrl: '/wocs-highschool.jpeg',
+    },
+    {
+      title: 'Chicago Gen Z Founders Dinner',
+      imageUrl: '/csdinner.jpeg',
+    },
+  ];
 
-  //const upcomingEvents = filteredEvents.filter(event => !event.isPast);
-  const pastEvents = filteredEvents.filter(event => event.isPast);
+  const upcomingEvents = events.filter(event => !event.isPast);
+  const pastEvents = events.filter(event => event.isPast);
 
   return (
     <div className="events-page">
@@ -199,50 +179,39 @@ const Events: React.FC = () => {
       {/* Past Events Section */}
       <section className="past-events py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="events-filter-bar mb-8">
-            <div className="search-box">
-              <Search size={18} />
-              <input 
-                type="text" 
-                placeholder="Search events..." 
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-              />
-            </div>
-            
-            <div className="categories-filter">
-              <div className="filter-icon">
-                <Filter size={18} />
-                <span>Filter:</span>
-              </div>
-              <div className="categories">
-                {categories.map((category, index) => (
-                  <button 
-                    key={index}
-                    className={`category-btn ${activeFilter === category.toLowerCase() ? 'active' : ''}`}
-                    onClick={() => setActiveFilter(category.toLowerCase())}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          {/* <h3 className="font-inter font-bold text-2xl mb-6">Upcoming Events</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {upcomingEvents.length > 0 ? (
-              upcomingEvents.map(event => (
-                <div key={event.id} className="event-card">
-                  <div className="event-image">
-                    <img src={event.imageUrl} alt={event.title} loading="lazy" />
+          <h3 className="font-inter font-bold text-2xl mb-6">Upcoming Events</h3>
+          <p className="text-gray-600 mb-6">
+            Here's what's coming up. Add these to your own calendar and{' '}
+            <a
+              href="https://codesocial.beehiiv.com/subscribe"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--primary)', textDecoration: 'underline' }}
+            >
+              subscribe to our email list
+            </a>{' '}
+            so you never miss one.
+          </p>
+
+          {upcomingEvents.length > 0 && (
+            <div className="upcoming-events-list mb-12">
+              {upcomingEvents.map(event => (
+                <div key={event.id} className="upcoming-event-card">
+                  <div className="upcoming-event-image">
+                    {event.imageUrl ? (
+                      <img src={event.imageUrl} alt={event.title} loading="lazy" />
+                    ) : (
+                      <div className="initiative-image-placeholder">
+                        <Calendar size={32} />
+                      </div>
+                    )}
                     <span className={`event-category ${event.category.toLowerCase()}`}>
                       {event.category}
                     </span>
                   </div>
-                  <div className="event-content">
-                    <h3 className="font-inter font-bold text-xl mb-3">{event.title}</h3>
-                    <p className="event-description mb-4">{event.description}</p>
+                  <div className="upcoming-event-content">
+                    <h3 className="font-inter font-bold text-2xl mb-3">{event.title}</h3>
+                    <p className="event-description mb-5">{event.description}</p>
                     <div className="event-details">
                       <div className="event-detail">
                         <Calendar size={16} />
@@ -257,26 +226,46 @@ const Events: React.FC = () => {
                         <span>{event.location}</span>
                       </div>
                     </div>
-                    <a href={`/events/${event.id}`} className="btn-primary mt-4">
-                      Register Now
-                    </a>
+                    {event.registrationUrl && (
+                      <a
+                        href={event.registrationUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary mt-5 upcoming-event-btn"
+                      >
+                        Register Now
+                      </a>
+                    )}
                   </div>
                 </div>
-              ))
-            ) : (
-              <div className="col-span-full text-center py-8">
-                <p className="text-gray-500">No upcoming events match your filters. Try adjusting your search.</p>
-              </div>
-            )}
-          </div> */}
-          
+              ))}
+            </div>
+          )}
+
+          <div className="calendar-embed mb-16">
+            <iframe
+              src={calendarSrc}
+              title="Code Social Events Calendar"
+              style={{ border: 0 }}
+              width="100%"
+              height="600"
+              loading="lazy"
+            />
+          </div>
+
           <h3 className="font-inter font-bold text-2xl mb-6">Past Events</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pastEvents.length > 0 ? (
               pastEvents.map(event => (
                 <div key={event.id} className="event-card past">
                   <div className="event-image">
-                    <img src={event.imageUrl} alt={event.title} loading="lazy" />
+                    {event.imageUrl ? (
+                      <img src={event.imageUrl} alt={event.title} loading="lazy" />
+                    ) : (
+                      <div className="initiative-image-placeholder">
+                        <Calendar size={32} />
+                      </div>
+                    )}
                     <span className={`event-category ${event.category.toLowerCase()}`}>
                       {event.category}
                     </span>
@@ -285,7 +274,9 @@ const Events: React.FC = () => {
                     </div>
                   </div>
                   <div className="event-content">
-                    <h3 className="font-inter font-bold text-xl mb-3">{event.title}</h3>
+                    <h3 className="font-inter font-bold text-xl mb-3 event-title" title={event.title}>
+                      {event.title}
+                    </h3>
                     <p className="event-description mb-4">{event.description}</p>
                     <div className="event-details">
                       <div className="event-detail">
@@ -301,19 +292,46 @@ const Events: React.FC = () => {
                         <span>{event.location}</span>
                       </div>
                     </div>
-                    {/*
-                    <a href={`/events/${event.id}`} className="btn-secondary mt-4">
-                      View Details
-                    </a>
-                    */}
                   </div>
                 </div>
               ))
             ) : (
               <div className="col-span-full text-center py-8">
-                <p className="text-gray-500">No past events match your filters. Try adjusting your search.</p>
+                <p className="text-gray-500">No past events to show yet.</p>
               </div>
             )}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Initiatives & Highlights Section */}
+      <section className="initiatives-section py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-inter font-bold text-3xl md:text-4xl mb-4">Initiatives &amp; Highlights</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              A look back at the programs, challenges, and in-person moments that brought our community together.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {initiatives.map((item, index) => (
+              <div key={index} className="initiative-card">
+                <div className="initiative-image">
+                  {item.imageUrl ? (
+                    <img src={item.imageUrl} alt={item.title} loading="lazy" />
+                  ) : (
+                    <div className="initiative-image-placeholder">
+                      <Calendar size={32} />
+                    </div>
+                  )}
+                </div>
+                <div className="initiative-content">
+                  <h3 className="font-inter font-bold text-xl">{item.title}</h3>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -352,7 +370,9 @@ const Events: React.FC = () => {
                 Whether you're an industry expert wanting to share knowledge, a company looking to engage with developers, or a community member with a great idea, we'd love to collaborate with you.
               </p>
               <a 
-                href="/GetInvolved"
+                href="mailto:codesocialcommunity@gmail.com?subject=Partner%20with%20Code%20Social"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-white inline-flex items-center gap-2"
               >
                 <span>Partner with Code Social</span>

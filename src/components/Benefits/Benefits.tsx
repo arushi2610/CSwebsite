@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Lightbulb, BookOpen } from 'lucide-react';
+import { Users, GraduationCap, BookOpen } from 'lucide-react';
 import './Benefits.css';
 
 const Benefits: React.FC = () => {
@@ -10,7 +10,7 @@ const Benefits: React.FC = () => {
       description: 'Connect with like-minded individuals in a supportive learning environment. Participate in free learning sessions and peer-to-peer knowledge sharing.'
     },
     {
-      icon: <Lightbulb size={48} />,
+      icon: <GraduationCap size={48} />,
       title: 'Mentorship Programs',
       description: 'Access structured mentorship opportunities with experienced professionals who are passionate about helping others learn and succeed in their chosen fields.'
     },

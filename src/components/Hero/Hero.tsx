@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { FaDiscord } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -16,13 +16,22 @@ const Hero: React.FC = () => {
             Join a FREE learning-focused community dedicated to providing accessible resources and opportunities to excel in various technologies. Connect with mentors, peers, and industry experts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/get-involved" className="btn-primary flex items-center justify-center gap-2">
-              <span>Join the Community</span>
+            <a
+              href="#newsletter"
+              className="btn-primary flex items-center justify-center gap-2"
+            >
+              <span>Subscribe to the Newsletter</span>
               <ArrowRight size={18} />
-            </Link>
-            <Link to="/events" className="btn-secondary flex items-center justify-center gap-2">
-              <span>Explore Learning Sessions</span>
-            </Link>
+            </a>
+            <a
+              href="https://discord.gg/MSTNyRSPYW"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary flex items-center justify-center gap-2"
+            >
+              <FaDiscord size={18} />
+              <span>Join our Discord</span>
+            </a>
           </div>
         </div>
       </div>

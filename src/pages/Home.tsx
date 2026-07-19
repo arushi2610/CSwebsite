@@ -6,9 +6,16 @@ import ProjectShowcase from '../components/Projects/ProjectShowcase';
 import './Home.css';
 
 const Home: React.FC = () => {
+  useSEO({
+    title: 'Code Social — Learn, Connect & Grow in Tech',
+    description: 'Code Social is a FREE global tech learning community of 10,000+ learners. Access mentorship, workshops, resources, and connect with developers worldwide.',
+    path: '/',
+  });
+
   return (
     <div>
       <Hero />
+      <NewsletterSignup />
       <Benefits />
       <section className="home-luma">
         <div className="container mx-auto px-4">
