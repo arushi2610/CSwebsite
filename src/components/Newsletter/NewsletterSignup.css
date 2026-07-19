@@ -26,6 +26,31 @@
   padding: 3rem 2.5rem;
 }
 
+.newsletter-cadence {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background-color: rgba(255,145,77,0.12);
+  border: 1px solid rgba(255,145,77,0.25);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.newsletter-embed {
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 60px;
+}
+
+.newsletter-embed iframe {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
 .newsletter-form {
   position: relative;
 }

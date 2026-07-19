@@ -15,7 +15,7 @@ interface Resource {
 const Resources: React.FC = () => {
   useSEO({
     title: 'Free Tech Resources | Code Social',
-    description: 'Explore 1,500+ free learning resources curated by the Code Social community — tutorials, guides, and tools for developers at every level.',
+    description: 'Explore free learning resources curated by the Code Social community — tutorials, guides, and tools for developers at every level.',
     path: '/resources',
   });
 
@@ -23,7 +23,7 @@ const Resources: React.FC = () => {
   const [searchQuery, setSearchQuery] = React.useState<string>('');
   
   const categories = [
-    'All', 'Course', 'Article', 'Website', 'Tool', 'Tutorial', 'Documentation'
+    'All', 'Course', 'Article', 'Tool', 'Tutorial', 'Documentation'
   ];
   
   const resources: Resource[] = [
@@ -196,16 +196,16 @@ const Resources: React.FC = () => {
               />
             </div>
             
-            <div className="categories-filter">
+            <div className="types-filter">
               <div className="filter-icon">
                 <Filter size={18} />
                 <span>Filter:</span>
               </div>
-              <div className="categories">
+              <div className="types">
                 {categories.map((category, index) => (
-                  <button 
+                  <button
                     key={index}
-                    className={`category-btn ${activeFilter === category.toLowerCase() ? 'active' : ''}`}
+                    className={`type-btn ${activeFilter === category.toLowerCase() ? 'active' : ''}`}
                     onClick={() => setActiveFilter(category.toLowerCase())}
                   >
                     {category}

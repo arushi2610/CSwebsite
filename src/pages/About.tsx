@@ -21,39 +21,6 @@ const About: React.FC = () => {
     path: '/about',
   });
 
-  const timelineEvents = [
-    {
-      year: 2020,
-      title: 'Foundation',
-      description: 'Code Social Community was founded as a learning-focused community dedicated to providing individuals with resources and opportunities to grow in various technologies.'
-    },
-    {
-      year: 2021,
-      title: 'First Learning Sessions',
-      description: 'We launched our first free learning sessions and mentorship programs, establishing the foundation for our educational approach.'
-    },
-    {
-      year: 2022,
-      title: 'Digital Platform Launch',
-      description: 'Expanded our reach with WhatsApp groups and Discord server to connect members globally and provide accessible learning resources.'
-    },
-    {
-      year: 2023,
-      title: 'Structured Mentorship',
-      description: 'Introduced our comprehensive mentorship program, connecting experienced professionals with newcomers in a structured learning environment.'
-    },
-    {
-      year: 2024,
-      title: 'Community Growth',
-      description: 'Established performance-based team structure with Core Team and Executive Team, fostering leadership development within our community.'
-    },
-    {
-      year: 2025,
-      title: 'Global Learning Hub',
-      description: 'Became a recognized global hub for hands-on learning, mentorship, and networking in the tech industry with members worldwide.'
-    }
-  ];
-
   const metrics = [
     { 
       value: '10,000+', 
@@ -177,29 +144,10 @@ const About: React.FC = () => {
         </div>
       </section>
 
-{/* 
-      <section className="timeline-section py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-16">Our Journey</h2>
-          <div className="timeline">
-            {timelineEvents.map((event, index) => (
-              <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-                <div className="timeline-content">
-                  <div className="year">{event.year}</div>
-                  <h3 className="font-inter font-bold text-xl mb-2">{event.title}</h3>
-                  <p>{event.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-*/}
-
       <section className="journey-section py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center font-inter font-bold text-3xl md:text-4xl mb-10">Our Journey</h2>
-          <p className="max-w-4xl mx-auto text-center text-WHITE text-lg leading-relaxed">
+          <p className="max-w-4xl mx-auto text-center text-white text-lg leading-relaxed">
             Hi, I’m Arushi, Founder of Code Social 👋<br /><br />
 I wasn’t coding since I was 12. I actually started learning when I was in college, but I knew I wanted to learn. When I joined random WhatsApp groups to ask questions, I was often judged for being “too behind.” I saw others get shut down too, especially beginners just getting started.<br /><br />
 So in 2023, I created a WhatsApp group to share beginner-friendly resources, free of judgment. That small space grew into Code Social, a global community of 10,000+ learners and a team of 11 organizing workshops, meetups, and challenges to make tech more accessible and fun.

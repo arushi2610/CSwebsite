@@ -1,0 +1,38 @@
+.upcoming-events-section {
+  background-color: var(--bg-base);
+}
+
+.upcoming-events-card {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: linear-gradient(160deg, rgba(255,145,77,0.05) 0%, transparent 60%);
+  border: 1px solid rgba(255,145,77,0.12);
+  border-radius: var(--radius-xl);
+}
+
+.upcoming-events-text {
+  flex: 1 1 320px;
+}
+
+.upcoming-events-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .upcoming-events-card {
+    padding: 1.75rem 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .upcoming-events-actions { width: 100%; }
+}

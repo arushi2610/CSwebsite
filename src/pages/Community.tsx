@@ -17,28 +17,9 @@ import { useSEO } from '../hooks/useSEO';
 const Community = () => {
   useSEO({
     title: 'Join the Community | Code Social',
-    description: 'Connect with 10,000+ tech learners on Discord, WhatsApp, Twitter, and Instagram. Be part of the Code Social global learning community.',
+    description: 'Connect with tech learners on Discord, X, LinkedIn, GitHub, and Instagram. Be part of the Code Social global learning community.',
     path: '/community',
   });
-  // Uncomment and use if needed later
-  // const networkPartners = [
-  //   {
-  //     name: "TechHub Global",
-  //     logo: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400",
-  //     website: "https://techhub.com"
-  //   },
-  //   {
-  //     name: "DevConnect Alliance",
-  //     logo: "https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=400",
-  //     website: "https://devconnect.org"
-  //   },
-  //   {
-  //     name: "Women in Tech Network",
-  //     logo: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
-  //     website: "https://womenintech.org"
-  //   }
-  // ];
-
   const socialMediaHandles = [
     {
       platform: "Discord",
@@ -64,7 +45,7 @@ const Community = () => {
     {
       platform: "GitHub",
       handle: "Code-Social",
-      url: "https://github.com/orgs/Code-Social/dashboard",
+      url: "https://github.com/Code-Social",
       icon: <Github size={24} />,
       description: ""
     },
@@ -141,42 +122,6 @@ const Community = () => {
           </div>
         </div>
       </section>
-
-      {/* Uncomment this block if you want to display network partners */}
-      {/*
-      <section className="network-partners py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-inter font-bold text-3xl md:text-4xl mb-6">Our Network Partners</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              We collaborate with leading tech communities and organizations worldwide to expand learning opportunities.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {networkPartners.map((partner, index) => (
-              <div key={index} className="partner-card">
-                <div className="partner-logo">
-                  <img src={partner.logo} alt={partner.name} loading="lazy" />
-                </div>
-                <div className="partner-content">
-                  <h3 className="font-inter font-bold text-xl mb-4">{partner.name}</h3>
-                  <a 
-                    href={partner.website} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="partner-link flex items-center justify-center gap-2"
-                  >
-                    <span>Visit Website</span>
-                    <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      */}
 
       {/* Social Media Section */}
       <section className="social-media py-20 bg-white">

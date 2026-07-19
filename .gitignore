@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Large media (meeting recordings, etc.) — keep out of git, too big for GitHub
+*.mp4
+*.m4a

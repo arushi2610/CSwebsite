@@ -55,3 +55,15 @@
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
+
+@media (max-width: 640px) {
+  .legal-hero {
+    min-height: auto;
+    padding: 2.5rem 0;
+  }
+
+  .legal-content h2 {
+    margin-top: 1.75rem;
+    font-size: 1.35rem;
+  }
+}

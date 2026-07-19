@@ -8,7 +8,6 @@ interface Testimonial {
   name: string;
   role: string;
   company: string;
-  imageUrl: string;
 }
 
 const Testimonials: React.FC = () => {
@@ -18,24 +17,21 @@ const Testimonials: React.FC = () => {
       quote: "I'm so grateful for this community, I joined it in 2023, when I first came to US for my masters, with alot of helpful resources in the community, I got Senior Software Engineer role at Persistent in San Francisco Bay Area, California.",
       name: "Prakhar Gupta",
       role: "Sr. Software Engineer",
-      company: "Persistent",
-      imageUrl: ""
+      company: "Persistent"
     },
     {
       id: 2,
       quote: "Code Social has been a guiding light in my tech journey, offering incredible resources which led me to where I am now, and they host events that truly enlighten. As a former Core Team member, I was mentored by the founder herself, whose constant support helped me grow both personally and professionally.",
       name: "Debasis Sikdar",
       role: "Final Year Student",
-      company: "",
-      imageUrl: ""
+      company: ""
     },
     {
       id: 3,
       quote: "Joining CodeSocial in 2024 via Discord was a pleasant surprise. My engagement with the community has been consistently rewarding. From insightful workshops to practical SQL and JavaScript sessions, the diverse learning opportunities have significantly contributed to my growth.",
       name: "Kaushik Raj",
       role: "Final Year Student",
-      company: "",
-      imageUrl: ""
+      company: ""
     }
   ];
 

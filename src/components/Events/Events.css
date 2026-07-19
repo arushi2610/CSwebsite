@@ -2,6 +2,16 @@
   background-color: var(--bg-base);
 }
 
+.initiative-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  background: linear-gradient(160deg, rgba(255,145,77,0.12) 0%, rgba(255,145,77,0.03) 100%);
+}
+
 .events-section h2 {
   position: relative;
   padding-bottom: 1rem;

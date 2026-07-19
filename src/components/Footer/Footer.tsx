@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             </Link>
             <p className="mb-6">Bringing techies together to learn, collaborate, and grow in a supportive community environment.</p>
             <div className="social-links flex gap-4">
-              <a href="https://github.com/orgs/Code-Social/dashboard" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/Code-Social" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github size={20} />
               </a>
               <a href="https://twitter.com/codesocial_tech" target="_blank" rel="noopener noreferrer" aria-label="Twitter">

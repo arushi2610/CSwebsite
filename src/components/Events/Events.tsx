@@ -15,28 +15,20 @@ interface Event {
 const Events: React.FC = () => {
   const pastEvents: Event[] = [
     {
-      id: 1,
-      title: 'Build with AI: Code Social - Portfolio Builder Hackathon',
+      id: 2,
+      title: 'Build with AI: Portfolio Builder Hackathon',
       date: 'April 10, 2026',
       time: '48 Hours',
       location: 'Online',
       imageUrl: '/Build%20with%20AI%20Poster.png'
     },
     {
-      id: 2,
-      title: 'Coding Quest Week',
-      date: 'June 30, 2025',
-      time: '6:00 PM - 8:00 PM',
-      location: 'Virtual',
-      imageUrl: '/Event2.jpg'
-    },
-    {
       id: 3,
-      title: 'Linkedin X-Ray',
-      date: 'March 22, 2025',
-      time: '8:00 PM - 10:00 PM',
-      location: 'Virtual',
-      imageUrl: '/Event-1.jpg'
+      title: 'Winter of Code Social 2025-26',
+      date: 'Nov 2025 - Jan 2026',
+      time: 'Season-long',
+      location: 'Online',
+      imageUrl: '/wocs-logo.png'
     }
   ];
 
@@ -47,7 +39,7 @@ const Events: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="font-inter font-bold text-3xl md:text-4xl text-dark mb-4">Past Events</h2>
           <p className="text-gray-600 max-w-xl mx-auto mb-6">
-            Take a look at some of our recent events and workshops that brought our community together.
+            Take a look at some of our recent events that brought our community together.
           </p>
           <Link to="/events" className="btn-outline">
             View All Events
@@ -55,10 +47,16 @@ const Events: React.FC = () => {
         </div>
         
         <div className="events-grid">
-          {pastEvents.slice(0, 2).map(event => (
+          {pastEvents.map(event => (
             <div key={event.id} className="event-card">
               <div className="event-image">
-                <img src={event.imageUrl} alt={event.title} loading="lazy" />
+                {event.imageUrl ? (
+                  <img src={event.imageUrl} alt={event.title} loading="lazy" />
+                ) : (
+                  <div className="initiative-image-placeholder">
+                    <Calendar size={32} />
+                  </div>
+                )}
               </div>
               <div className="event-content">
                 <h3 className="font-inter font-bold text-xl mb-3">{event.title}</h3>

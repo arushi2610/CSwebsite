@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero/Hero';
 import Benefits from '../components/Benefits/Benefits';
+import UpcomingEvents from '../components/UpcomingEvents/UpcomingEvents';
 import Events from '../components/Events/Events';
 import Testimonials from '../components/Testimonials/Testimonials';
 import ProjectShowcase from '../components/Projects/ProjectShowcase';
@@ -17,11 +18,12 @@ const Home: React.FC = () => {
   return (
     <div>
       <Hero />
+      <NewsletterSignup />
       <Benefits />
+      <UpcomingEvents />
       <Events />
       <ProjectShowcase />
       <Testimonials />
-      <NewsletterSignup />
     </div>
   );
 };

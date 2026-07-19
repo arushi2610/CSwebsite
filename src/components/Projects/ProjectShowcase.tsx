@@ -42,7 +42,6 @@ const ProjectShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* TODO: restore project images, demo links, author cards, and like counts when ready */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map(project => (
             <div key={project.id} className="project-card">
