@@ -15,6 +15,12 @@ const getInitialsPlaceholder = (name: string): string => {
 };
 
 const About: React.FC = () => {
+  useSEO({
+    title: 'About Code Social | Our Mission & Community',
+    description: 'Learn about Code Social — a free global tech learning community of 10,000+ members sharing mentorship, resources, and support to grow in tech together.',
+    path: '/about',
+  });
+
   const metrics = [
     { 
       value: '10,000+', 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Calendar, MapPin, Clock, Users, Presentation, Code, Trophy, Video, Coffee, Mail } from 'lucide-react';
+import { Calendar, MapPin, Clock, Users, Presentation, Code, Trophy, Video, Coffee } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 import './Events.css';
 
