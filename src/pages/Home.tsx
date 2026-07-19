@@ -3,6 +3,8 @@ import Hero from '../components/Hero/Hero';
 import Benefits from '../components/Benefits/Benefits';
 import Testimonials from '../components/Testimonials/Testimonials';
 import ProjectShowcase from '../components/Projects/ProjectShowcase';
+import NewsletterSignup from '../components/Newsletter/NewsletterSignup';
+import { useSEO } from '../hooks/useSEO';
 import './Home.css';
 
 const Home: React.FC = () => {
