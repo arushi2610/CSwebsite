@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import BackToTop from './components/BackToTop/BackToTop';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Events from './pages/Events';
@@ -17,6 +18,7 @@ import './App.css';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Header />
         <main className="main-content">
