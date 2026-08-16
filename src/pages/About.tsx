@@ -99,6 +99,27 @@ const About: React.FC = () => {
       role: 'Executive Team Member',
       bio: 'The newest member of the Code Social Executive Team.',
       imageUrl: '/DebImage2.jpeg'
+    },
+    {
+      name: 'Shruti Naidu',
+      role: 'Executive Team Member',
+      bio: 'Trying to understand data… and sometimes myself too.',
+      imageUrl: '/Shruti.png',
+      linkedinUrl: 'https://www.linkedin.com/in/shrutinaidu05/'
+    },
+    {
+      name: 'Ankit Pardeshi',
+      role: 'Executive Team Member',
+      bio: 'Huge believer of "When you EXCEL people SPREADSHEET about you !"',
+      imageUrl: '/Ankit.png',
+      linkedinUrl: 'https://www.linkedin.com/in/ankitpardeshi05/'
+    },
+    {
+      name: 'Siddhika Nitnaware',
+      role: 'Executive Team Member',
+      bio: 'Living on screen: anime binges and lowkey code vibes',
+      imageUrl: '/Siddhika.png',
+      linkedinUrl: 'https://www.linkedin.com/in/siddhikanitnaware/'
     }
   ];
 
