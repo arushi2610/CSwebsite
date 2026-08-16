@@ -93,6 +93,12 @@ const About: React.FC = () => {
       bio: 'Building stuff,breaking stuff and pretending I know what I\'m doing.',
       imageUrl: '/an.png',
       linkedinUrl: 'https://www.linkedin.com/in/anshita-garg14/'
+    },
+    {
+      name: 'Deb Mukherjee',
+      role: 'Executive Team Member',
+      bio: 'The newest member of the Code Social Executive Team.',
+      imageUrl: '/DebImage2.jpeg'
     }
   ];
 

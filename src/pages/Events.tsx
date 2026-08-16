@@ -56,8 +56,7 @@ const Events: React.FC = () => {
       category: 'Tech Talks',
       imageUrl: '/chitechweek.png',
       description: 'A Chicago Tech Week 2026 recommended event, presented by Code Social.',
-      isPast: false,
-      registrationUrl: 'https://luma.com/ek7m5ctg'
+      isPast: true
     },
     {
       id: 2,
@@ -134,6 +133,10 @@ const Events: React.FC = () => {
     {
       title: 'Chicago Gen Z Founders Dinner',
       imageUrl: '/csdinner.jpeg',
+    },
+    {
+      title: 'CodeSocial@ Startup Meetup, Pune, India',
+      imageUrl: '/Startupmeet.jpeg',
     },
   ];
 
